@@ -1,37 +1,22 @@
 <template>
-    <div>
-        <header id="main-header">
-            <div class="center-header">
-                <h1>MYJALI.com</h1>
-                <ul>
-                    <li>환경센터</li>
-                    <li>예약설정</li>
-                    <li>메뉴설정</li>
-                </ul>
-            </div>
-        </header>
-     
-        <footer>
-            <div>
-                <ul>
-                    <li><a href="#">이용약관</a></li>
-                    <li><a href="#">개인정보처리방침</a></li>
-                    <li><a href="#">고객문의</a></li>
-                </ul>
-            </div>
-            <div>
-                <address>
-                    Copyright © 2020 Contentstech., All rights reserved
-                </address>
-            </div>
-        </footer> 
-    </div>
+    <header id="header">
+        <div class="partner-header">
+            <h1>MYJALI.com</h1>
+            <ul>
+                <li>로그인</li>
+                <li>이용안내</li>
+                <li>파트너 가입</li>
+            </ul>
+        </div>
+    </header>    
 </template>
+
 <script>
 export default {
-    name : 'header'
+    name : "MainHeader"
 }
 </script>
+
 <style scoped lang="scss">
     #main-header {
         overflow: hidden;

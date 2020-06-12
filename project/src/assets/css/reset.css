@@ -1,0 +1,328 @@
+@charset "utf-8";
+html {
+    font-family: sans-serif;
+    /* 1 */
+    -ms-text-size-adjust: 100%;
+    /* 2 */
+    -webkit-text-size-adjust: 100%;
+    /* 2 */
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    font-family: 'NotoSansKR-Regular', 'Noto Sans KR', 'Noto+Sans', '애플 SD 산돌고딕 Neo', 'Apple SD Gothic Neo', '맑은 고딕', 'Malgun Gothic', 'Helvetica Neue', Helvetica, Dotum, '돋움', sans-serif !important;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+main {
+    display: block;
+}
+
+a {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+    display: block;
+}
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+img,
+fieldset,
+form {
+    border: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+
+/* Forms ========================================================================== */
+
+
+/** * 알려진 한계: 기본적으로 OS X의 Chrome과 Safari는 `border` 속성을 지정하지 않는 한 * `select` 요소의 스타일링에 매우 제한적이다. */
+
+
+/** * 1. color 속성이 상속되지 않는 것을 수정. * 알려진 문제: disabled 된 요소의 color 속성에도 영향을 미친다. * 2. font 속성이 상속되지 않는 것을 수정. * 3. Firefox 4+, Safari, Chrome에서 마진이 서로 다른 것을 해결. */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    color: inherit;
+    /* 1 */
+    font: inherit;
+    /* 2 */
+    margin: 0;
+    /* 3 */
+}
+
+
+/** * IE 8/9/10/11에서 `overflow` 속성값이 `hidden`으로 설정되어 있는 것을 수정 */
+
+button {
+    overflow: visible;
+}
+
+
+/** * `button`과 `select` 요소에 `text-transform` 상속이 일치하지 않는 것을 해결 * 모든 다른 폼 컨트롤 요소는 `text-transform` 값을 상속하지 않는다. * IE 8/9/10/11, Firefox, Opera에서 `button` 요소의 스타일 상속 수정. * Firefox에서 `select` 요소의 스타일 상속 수정. */
+
+button,
+select {
+    text-transform: none;
+}
+
+
+/** * 1. Android 4.0.*에서 `audio`와 `video` 컨트롤을 파괴하는 웹킷 버그를 방지. * 2. iOS에서 클릭가능한 `input` 유형에 스타일링을 할 수 없는 것을 수정. * 3. `input` 요소와 다른 요소들의 image-type의 커서 모양을 일치시켜 가용성을 향상. * `input` and others. */
+
+button,
+html input[type="button"],
+
+/* 1 */
+
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button;
+    /* 2 */
+    cursor: pointer;
+    /* 3 */
+}
+
+
+/** * disabled된 요소의 기본 커서를 재설정 */
+
+button[disabled],
+html input[disabled] {
+    cursor: default;
+}
+
+
+/** * Firefox 4+에서 내부 `padding`과 `border`를 제거 */
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+
+/** * Firefox 4+에서 UA(User Agent) 스타일시트에 `!important`를 사용한 `input` 요소의 * `line-height` 설정값을 해결. */
+
+input {
+    line-height: normal;
+}
+
+
+/** * 이러한 요소의 스타일을 설정하려고하지 않는 것이 좋다. * Firefox에서 아래의 요소에서 box-sizing, padding, width가 구현될꺼라 기대하지 말자. * * 1. IE 8/9/10에서 box sizing 속성값을 `content-box`에서 `border-box`로 변경 * 2. IE 8/9/10에서 영역을 벗어나지 않도록 `padding`을 제거 */
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box;
+    /* 1 */
+    padding: 0;
+    /* 2 */
+}
+
+
+/** * Chrome의 증가/감소 버튼의 커서 모양을 수정. * `input` 요소의 특정 `font-size` 값에 대해 감소 버튼의 커서 모양이 `default`에서 `text`로 변한다. */
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    height: auto;
+}
+
+
+/** * OS X의 Safari, Chrome에서 내부(inner) `padding`과 검색 취소 버튼을 제거. * Safari (but not Chrome) clips the cancel button when the search input has * padding (and `textfield` appearance). */
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+
+/** * 1. IE 8/9/10/11에서 `color`는 상속되지 않는다. * 2. Remove padding so people aren't caught out if they zero out fieldsets. */
+
+legend {
+    border: 0;
+    /* 1 */
+    padding: 0;
+    /* 2 */
+}
+
+
+/** * IE 8/9/10/11에서 기본 세로 스크롤바를 제거 */
+
+textarea {
+    overflow: auto;
+}
+
+
+/** * `font-weight`는 상속되지 않는다.(applied by a rule above). * 주의: OS X의 Chrome과 Safari에서 기본값을 변경하는 것은 안전하지 않다. */
+
+optgroup {
+    font-weight: bold;
+}
+
+
+/* Tables ========================================================================== */
+
+
+/** * 테이블 요소 사이의 간격을 제거 */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td,
+th {
+    padding: 0;
+}
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active,
+a:focus {
+    color: inherit;
+    text-decoration: none
+}
+
+input,
+button,
+select,
+textarea,
+label {
+    vertical-align: middle;
+    border: none;
+    background: none;
+    cursor: pointer
+}
+
+textarea,
+select,
+input {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+    border: 0
+}
