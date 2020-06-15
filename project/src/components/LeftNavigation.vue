@@ -3,23 +3,23 @@
         <nav class="left-menu">
             <ul class="depth2">
                 <li class="set-site">
-                    <span>환경 설정</span>
+                    <span><router-link to="/settingSite">환경 설정</router-link></span>
                     <ul>             
-                        <li>사이트 설정</li>
-                        <li>상품 설정</li>
+                        <li><router-link to="/settingSite">사이트 설정</router-link></li>
+                        <li><router-link to="/settingProduct">상품 설정</router-link></li>
                     </ul>
                 </li>
                 <li class="set-schedule">
-                    <span>예약 설정</span>
+                    <span><router-link to="/settingSchedule">예약 설정</router-link></span>
                     <ul>
-                        <li>예약 등록</li>
-                        <li>예약 리스트</li>
+                        <li><router-link to="/settingSchedule">예약 등록</router-link></li>
+                        <li><router-link to="/settingScheduleList">예약 리스트</router-link></li>
                     </ul>
                 </li>
                 <li class="set-menu">
-                    <span>메뉴 설정</span>
+                    <span><router-link to="/settingMenu">메뉴 설정</router-link></span>
                     <ul>
-                        <li>메뉴 설정</li>
+                        <li><router-link to="/settingMenu">메뉴 설정</router-link></li>
                     </ul>
                 </li>
             </ul>
@@ -31,4 +31,5 @@
 export default {
     name : 'LeftNavigation'
 }
+
 </script>

@@ -12,9 +12,18 @@ import About from "../views/About.vue";
 import Partner from "../views/Partner.vue";
 
 /* admin */
-import SettingSite from "../admin/SettingSite.vue";
-import SettingProduct from "../admin/SettingProduct.vue";
-import SettingSchedule from "../admin/SettingSchedule.vue";
+import SettingSite from "../admin/SettingSite.vue"; //사이트설정
+import SettingProduct from "../admin/SettingProduct.vue"; //상품설정정
+import SettingSchedule from "../admin/SettingSchedule.vue" //예약 등록
+import SettingScheduleList from "../admin/SettingScheduleList.vue"; //예약 리스트
+import SettingMenu from "../admin/SettingMenu.vue"; //메뉴 설정
+import SettingSchduleComplete from "../admin/SettingSchduleComplete.vue"; //예약설정 완료
+import SettingSchduleComplete2 from "../admin/SettingSchduleComplete2.vue"; //예약 수정 완료
+import SettingScheduleModify from "../admin/SettingScheduleModify.vue"; //예약 수정
+import SettingScheduleModify2 from "../admin/SettingScheduleModify2.vue"; //예약 수정(스케쥴없음)
+import SettingSchduleDelete from "../admin/SettingSchduleDelete.vue"; //예약 삭제
+import SettingSchduleDeleteComplete from "../admin/SettingSchduleDeleteComplete.vue"; //예약 삭제 완료
+
 
 
 function mainLayout(content) {
@@ -47,19 +56,59 @@ const routes = [{
         components: centerLayout(Partner)
     },
     {
-        path: "/SettingSite",
+        path: "/settingSite",
         name: "SettingSite",
         components: centerLayout(SettingSite)
     },
     {
-        path: "/SettingProduct",
+        path: "/settingProduct",
         name: "SettingProduct",
         components: centerLayout(SettingProduct)
     },
     {
-        path: "/SettingSchedule",
+        path: "/settingSchedule",
         name: "SettingSchedule",
         components: centerLayout(SettingSchedule)
+    },
+    {
+        path: "/settingScheduleList",
+        name: "SettingScheduleList",
+        components: centerLayout(SettingScheduleList)
+    },
+    {
+        path: "/settingMenu",
+        name: "SettingMenu",
+        components: centerLayout(SettingMenu)
+    },
+    {
+        path: "/settingSchduleComplete",
+        name: "SettingSchduleComplete",
+        components: centerLayout(SettingSchduleComplete)
+    },
+    {
+        path: "/settingSchduleComplete2",
+        name: "SettingSchduleComplete2",
+        components: centerLayout(SettingSchduleComplete2)
+    },
+    {
+        path: "/settingScheduleModify",
+        name: "SettingScheduleModify",
+        components: centerLayout(SettingScheduleModify)
+    },
+    {
+        path: "/settingScheduleModify2",
+        name: "SettingScheduleModify2",
+        components: centerLayout(SettingScheduleModify2)
+    },
+    {
+        path: "/settingSchduleDelete",
+        name: "SettingSchduleDelete",
+        components: centerLayout(SettingSchduleDelete)
+    },
+    {
+        path: "/settingSchduleDeleteComplete",
+        name: "SettingSchduleDeleteComplete",
+        components: centerLayout(SettingSchduleDeleteComplete)
     }
 
 ];

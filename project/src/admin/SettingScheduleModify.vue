@@ -4,11 +4,12 @@
             <!-- left menu -->
            <left-navigation></left-navigation>
 
+            <!-- 수정 -->
             <!-- content start -->
             <div class="content">
 
                 <h2>예약 설정</h2>
-                <h3>예약 스케쥴 등록</h3>
+                <h3>예약 수정</h3>
 
                 <!-- form field -->
                 <form action="">
@@ -19,7 +20,7 @@
                             <!-- radio 3개 -->
                             <div class="three-radio">
                                 <div class="radio-form">
-                                    <input type="radio" id="name1" name="name1">
+                                    <input type="radio" id="name1" name="name1" checked>
                                     <label for="">낚시 선박</label>
                                 </div>
                                 <div class="radio-form">
@@ -31,16 +32,15 @@
                                     <label for="">숙박 객실</label>
                                 </div>
                             </div>
-                            <!-- 유효성검사 실패시 error 클래스 추가 -->
-                            <div class="form-large error">
-                                <input type="text"  name="" id="" placeholder="예약 이름">
+                            
+                            <div class="form-large">
+                                <input type="text" name="" id="" placeholder="주말 새벽 광어 낚시!!!">
                                 <label for="">예약 이름 </label>
-                                <div class="error-msg" id="error-msg">error massage</div>
                             </div>
                             <p class="info-text">- 예약 정보 수정 및 삭제시 사용되는 이름 입니다.</p>
                             
                             <div class="form-large">
-                                <input type="text" name="" id="" placeholder="예약 비용 (숫자만 입력)">
+                                <input type="text" name="" id="" placeholder="50,000">
                                 <label for="">예약 비용 (숫자만 입력)</label>
                             </div>
                             <p class="info-text">- 예약 비용 안내를 위해 사용 됩니다. 1인 예약금을 숫자만 입력해 주세요.</p>
@@ -52,17 +52,17 @@
                                 <p>시작일</p>
                                 <div class="select-form select-year">
                                     <select name="" id="">
-                                        <option value="년">년</option>
+                                        <option value="2020 년">2020 년</option>
                                     </select>
                                 </div>
                                 <div class="select-form select-month">
                                     <select name="" id="">
-                                        <option value="월">월</option>
+                                        <option value="5 월"> 5월</option>
                                     </select>
                                 </div>
                                 <div class="select-form select-day">
                                     <select name="" id="">
-                                        <option value="일">일</option>
+                                        <option value="21 일">21 일</option>
                                     </select>
                                 </div>
                             </div>
@@ -70,17 +70,17 @@
                                 <p>종료일</p>
                                 <div class="select-form select-year">
                                     <select name="" id="">
-                                        <option value="년">년</option>
+                                        <option value="2020 년">2020 년</option>
                                     </select>
                                 </div>
                                 <div class="select-form select-month">
                                     <select name="" id="">
-                                        <option value="월">월</option>
+                                        <option value="5 월">5 월</option>
                                     </select>
                                 </div>
                                 <div class="select-form select-day">
                                     <select name="" id="">
-                                        <option value="일">일</option>
+                                        <option value="31 일">31 일</option>
                                     </select>
                                 </div>
                             </div>
@@ -91,11 +91,11 @@
                             <!-- radio 2개 -->
                             <div class="two-radio">
                                 <div class="radio-form">
-                                    <input type="radio" id="" name="">
+                                    <input type="radio" id="" name="" >
                                     <label for="">사용</label>
                                 </div>
                                 <div class="radio-form">
-                                    <input type="radio" id="" name="">
+                                    <input type="radio" id="" name="" checked>
                                     <label for="">미사용</label>
                                 </div>
                             </div>
@@ -108,19 +108,19 @@
                             <!--  : 모양땜에 임시조치 이 안쪽은은 삭제하고 작업부탁드려요 -->
                             <img src="../assets/images/topimg_board.png" alt="   ">
 <pre style="padding:10px; text-align:left;border:1px solid #999">
-공지 :
+공지 : 비와도 갑니다.
 
-어종 :
+어종 : 광어/우럭/농어
+ 
+출항시간 : 05:00
 
-출항시간 :
+준비물 : 장화 / 썬크림 / 낚시장비 / 구명조끼 / 신분증증
 
-준비물 :
+서비스 : 미끼 5종종
 
-서비스 :
+집결지 : 전라북도 군산시 새만금북로 201 오드리피싱
 
-집결지 :
-
-기타 :
+기타 : 신분증 꼭 지참
 </pre>
                         </div>   
 
@@ -146,7 +146,7 @@
                                     <label for="">추첨식 배정</label>
                                 </div>
                                 <div class="radio-form">
-                                    <input type="radio" id="" name="">
+                                    <input type="radio" id="" name="" checked>
                                     <label for="">예약자 지정</label>
                                 </div>
                             </div>
@@ -265,7 +265,7 @@
                       
                         
                         <div class="button-wrap">
-                            <button type="button" class="button-primary large">예약 등록</button>
+                            <button type="button" class="button-primary large">예약 수정</button>
                         </div>
                         
                     </fieldset>

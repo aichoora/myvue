@@ -3,12 +3,12 @@
     <router-view name="header"></router-view>
     <router-view name="content"></router-view>
     <router-view name="footer"></router-view>
-
+<!-- 
      <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
       <router-link to="/Partner">Partner-center</router-link>
-    </div>
+    </div> -->
     
   </div>
 </template>

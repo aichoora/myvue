@@ -2,11 +2,14 @@
     <header id="sub-header">
         <div class="partner-header">
             <h1><img src="../assets/images/logo.png" alt="MYJALI.com"></h1>
-            <ul>
-                <li><router-link to="/SettingSite">환경 설정</router-link> </li>
-                <li><router-link to="/SettingSchedule">예약 설정</router-link> </li>
-                <li><router-link to="/Partner">메뉴 설정</router-link></li>          
-            </ul>
+            <!-- mainMenu -->
+            <div class="center">
+        <ul>
+            <li><router-link to="/SettingSite">환경 설정</router-link> </li>
+            <li><router-link to="/SettingSchedule">예약 설정</router-link> </li>
+            <li><router-link to="/Partner">메뉴 설정</router-link></li>          
+        </ul>
+            </div>
             <!-- top-nav component -->
             <div class="top-nav">
                 <a href="#" class="user-menu">내계정</a>

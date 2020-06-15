@@ -1,0 +1,379 @@
+/* form */
+
+.form-wrap {
+    margin-bottom: 22px;
+    @include afterSet;
+    .title {
+        font-size: 12px;
+        color: #333;
+        font-weight: bold;
+        margin-bottom: 12px;
+    }
+}
+
+input:focus {
+    outline: none
+}
+
+
+/* radio form */
+
+input[type="radio"] {
+    /* 기본 디자인 리셋 */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+input[type="radio"]+label {
+    display: inline-block;
+    position: relative;
+    top: -3px;
+    padding-left: 28px;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+input[type="radio"]+label:before {
+    display: inline-block;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 18px;
+    height: 18px;
+    background-color: #fff;
+    border: 1px solid #999;
+    border-radius: 50%;
+}
+
+input[type="radio"]:checked+label:before {
+    background-color: #3c6def;
+    border: 1px solid #3c6def;
+}
+
+input[type="radio"]:checked+label:after {
+    display: inline-block;
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    z-index: 2;
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+input[type="text"]+label {
+    @include hidden;
+}
+
+.form-wrap {
+    input[type="text"] {
+        padding: 10px 12px;
+        color: #999;
+        border-radius: 4px;
+        border: solid 1px #b9b9b9;
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+    .form-large>input {
+        width: 100%;
+        @include boxSizing;
+    }
+    .form-middle>input {
+        width: 70%;
+        @include boxSizing;
+    }
+}
+
+
+/* select */
+
+select {
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 7px 34px 7px 12px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+select::ms-expand {
+    display: none;
+}
+
+.select-form {
+    position: relative;
+    border: solid 1px #b9b9b9;
+    border-radius: 4px;
+    background: #fff;
+    label {
+        @include hidden;
+    }
+}
+
+.select-form::before {
+    display: inline-block;
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    z-index: 1;
+    width: 15px;
+    height: 8px;
+    margin-top: -4px;
+    background: url('../images/icon_arrow.png') no-repeat;
+}
+
+.select-form.hover::before {
+    //background 반전
+    transform: rotateX('180');
+}
+
+.date-list {
+    @include afterSet;
+    margin-bottom: 8px;
+    p {
+        margin-bottom: 4px;
+    }
+    .select-form {
+        float: left;
+        width: 31.6%;
+        @media screen and (max-width: 412px) {
+            width: 100%;
+            margin-bottom: 8px;
+        }
+    }
+    .select-month {
+        margin: 0 5px;
+        @media screen and (max-width: 412px) {
+            margin: 0;
+            margin-bottom: 8px;
+        }
+    }
+}
+
+
+/* 2개 radio */
+
+.form-wrap {
+    .two-radio {
+        overflow: hidden;
+        margin-bottom: 8px;
+        width: 55%;
+        @media screen and (max-width: 720px) {
+            width: 100%;
+        }
+        .radio-form {
+            float: left;
+            width: 50%;
+        }
+    }
+    .three-radio {
+        overflow: hidden;
+        margin-bottom: 8px;
+        .radio-form {
+            float: left;
+            width: 33.3%;
+            @media screen and (max-width: 500px) {
+                width: 100%;
+            }
+        }
+    }
+    .four-radio {
+        overflow: hidden;
+        margin-bottom: 8px;
+        .radio-form {
+            float: left;
+            width: 25%;
+            @media screen and (max-width: 500px) {
+                width: 100%;
+            }
+        }
+    }
+    p {
+        font-size: 14px;
+        color: #333
+    }
+}
+
+
+/* infut focus */
+
+input[type="text"]:focus,
+select:focus,
+textarea:focus,
+.select-form:focus {
+    border-color: #3c6def;
+}
+
+
+/* file */
+
+.file-form {
+    @include afterSet;
+    input[type="file"] {
+        /* 기본 디자인 리셋 */
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+    }
+    input.file-name {
+        @include boxSizing;
+        float: left;
+        width: 77%;
+        border: 1px solid #999;
+        @media screen and (max-width: 900px) {
+            width: 100%;
+        }
+    }
+    input.file-name+.find-file {
+        display: block;
+        overflow: initial;
+        position: relative;
+        left: 0;
+        float: right;
+        width: 20.5%;
+        margin-left: 5px;
+        height: 44px;
+        line-height: 44px;
+        background: #758298;
+        color: #fff;
+        text-align: center;
+        border-radius: 22px;
+        font-size: 14px;
+        margin-bottom: 8px;
+        text-indent: initial;
+        @media screen and (max-width: 900px) {
+            float: left;
+            width: 100%;
+        }
+    }
+    input.file-name+.disabled {
+        background-color: #a7afbe;
+    }
+}
+
+
+/* phone-form */
+
+.phone-form {
+    @include afterSet;
+    input:first-child {
+        float: left;
+        width: 23%;
+        @media screen and (max-width: 720px) {
+            width: 100%;
+        }
+    }
+    input {
+        @include boxSizing;
+        float: right;
+        width: 76%;
+        @media screen and (max-width: 720px) {
+            width: 100%;
+        }
+    }
+}
+
+
+/* account-form */
+
+.account-form {
+    @include afterSet;
+    .select-form {
+        float: left;
+        width: 201px;
+        height: 40px;
+        width: 23%;
+        @media screen and (max-width: 720px) {
+            width: 100%;
+            margin-bottom: 8px;
+        }
+    }
+    input {
+        @include boxSizing;
+        float: right;
+        width: 340px;
+        width: 75%;
+        @media screen and (max-width: 720px) {
+            width: 100%;
+        }
+    }
+}
+
+.zipCode-form {
+    @include afterSet;
+    input {
+        @include boxSizing;
+        float: left;
+        width: 56%;
+        margin-right: 10px;
+        @media screen and (max-width: 600px) {
+            width: 35%;
+        }
+        @media screen and (max-width: 412px) {
+            width: 30%;
+        }
+    }
+    button {
+        float: left;
+        width: 120px;
+        height: 44px;
+        line-height: 44px;
+        background-color: #758298;
+        color: #fff;
+        text-align: center;
+        font-size: 14px;
+        border-radius: 22px;
+    }
+}
+
+
+/* error massags */
+
+.error-msg {
+    font-size: 14px;
+    word-break: keep-all;
+    word-wrap: break-word;
+    color: #e53935;
+}
+
+.form-large.error,
+.form-wrap.error {
+    input {
+        border-color: #e53935;
+        ;
+        color: #e53935;
+    }
+}
+
+.form-large {
+    .error-msg {
+        font-size: 14px;
+        word-break: keep-all;
+        word-wrap: break-word;
+        color: #e53935;
+    }
+}
