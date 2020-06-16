@@ -10,7 +10,7 @@
                 <h2>예약 리스트</h2>
                 <p> 파트너님께서 등록한 예약 스케쥴 입니다.</p>
                 
-                <div class="scheduleList-wrap">
+                <div class="scheduleList-wrap table-wrap">
                     <table class="table-style2">
                         <caption>등록된 상품 리스트</caption>
                         <colgroup>

@@ -12,7 +12,7 @@
                 <p>이미 예약이 진행된 스케줄은 삭제하실 수 없습니다.</p>
                 
                 
-                <div class="scheduleList-wrap">
+                <div class="scheduleList-wrap table-wrap">
                     <table class="table-style2">
                         <caption>등록된 상품 리스트</caption>
                         <colgroup>

@@ -9,7 +9,7 @@
 
                 <h2>예약 수정 완료</h2>
                 <p>파트너님의 사이트에 예약이 수정 되었습니다.</p>
-                 <div class="scheduleList-wrap">
+                 <div class="scheduleList-wrap table-wrap">
                     <table class="table-style2">
                         <caption>등록된 상품 리스트</caption>
                         <colgroup>

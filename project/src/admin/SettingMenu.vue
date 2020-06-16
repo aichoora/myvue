@@ -28,91 +28,92 @@
                         </div>
 
                         <p class="title">메뉴 설정</p>
-                        <table class="table-style1 table-hasForm">
-                            <caption>메뉴 설정</caption>
-                            <thead>
-                                <tr>
-                                    <th>메뉴</th>
-                                    <th>기타</th>
-                                    <th>순서</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <input type="text" name="" id="" placeholder="공지사항">
-                                        <label for="">공지사항</label>
-                                    </td>
-                                    <td>
-                                        <div class="button-wrap table-form">
-                                            <button type="button" class="button-modify">수정</button>
-                                            <button type="button" class="button-delete">삭제</button>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="button-wrap updown-form">
-                                            <button type="button" class="button-up">up</button>
-                                            <button type="button" class="button-down">down</button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="text" name="" id="" placeholder="상품소개">
-                                        <label for="">상품소개</label>
-                                    </td>
-                                    <td>
-                                        <div class="button-wrap table-form">
-                                            <button type="button" class="button-modify">수정</button>
-                                            <button type="button" class="button-delete">삭제</button>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="button-wrap updown-form">
-                                            <button type="button" class="button-up">up</button>
-                                            <button type="button" class="button-down">down</button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="text" name="" id="" placeholder="조항정보">
-                                        <label for="">조항정보</label>
-                                    </td>
-                                    <td>
-                                        <div class="button-wrap table-form">
-                                            <button type="button" class="button-modify">수정</button>
-                                            <button type="button" class="button-delete">삭제</button>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="button-wrap updown-form">
-                                            <button type="button" class="button-up">up</button>
-                                            <button type="button" class="button-down">down</button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="text" name="" id="" placeholder="먹물정보">
-                                        <label for="">먹물정보</label>
-                                    </td>
-                                    <td>
-                                        <div class="button-wrap table-form">
-                                            <button type="button" class="button-modify">수정</button>
-                                            <button type="button" class="button-delete">삭제</button>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="button-wrap updown-form">
-                                            <button type="button" class="button-up">up</button>
-                                            <button type="button" class="button-down">down</button>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-
+                        <div class="table-wrap">
+                            <table class="table-style1 table-hasForm">
+                                <caption>메뉴 설정</caption>
+                                <thead>
+                                    <tr>
+                                        <th>메뉴</th>
+                                        <th>기타</th>
+                                        <th>순서</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <input type="text" name="" id="" placeholder="공지사항">
+                                            <label for="">공지사항</label>
+                                        </td>
+                                        <td>
+                                            <div class="button-wrap table-form">
+                                                <button type="button" class="button-modify">수정</button>
+                                                <button type="button" class="button-delete">삭제</button>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="button-wrap updown-form">
+                                                <button type="button" class="button-up">up</button>
+                                                <button type="button" class="button-down">down</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="text" name="" id="" placeholder="상품소개">
+                                            <label for="">상품소개</label>
+                                        </td>
+                                        <td>
+                                            <div class="button-wrap table-form">
+                                                <button type="button" class="button-modify">수정</button>
+                                                <button type="button" class="button-delete">삭제</button>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="button-wrap updown-form">
+                                                <button type="button" class="button-up">up</button>
+                                                <button type="button" class="button-down">down</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="text" name="" id="" placeholder="조항정보">
+                                            <label for="">조항정보</label>
+                                        </td>
+                                        <td>
+                                            <div class="button-wrap table-form">
+                                                <button type="button" class="button-modify">수정</button>
+                                                <button type="button" class="button-delete">삭제</button>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="button-wrap updown-form">
+                                                <button type="button" class="button-up">up</button>
+                                                <button type="button" class="button-down">down</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="text" name="" id="" placeholder="먹물정보">
+                                            <label for="">먹물정보</label>
+                                        </td>
+                                        <td>
+                                            <div class="button-wrap table-form">
+                                                <button type="button" class="button-modify">수정</button>
+                                                <button type="button" class="button-delete">삭제</button>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="button-wrap updown-form">
+                                                <button type="button" class="button-up">up</button>
+                                                <button type="button" class="button-down">down</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                        
                         <div class="button-wrap">
                             <button type="button" class="primary large">확인</button>

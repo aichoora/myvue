@@ -23,7 +23,7 @@ import SettingScheduleModify from "../admin/SettingScheduleModify.vue"; //예약
 import SettingScheduleModify2 from "../admin/SettingScheduleModify2.vue"; //예약 수정(스케쥴없음)
 import SettingSchduleDelete from "../admin/SettingSchduleDelete.vue"; //예약 삭제
 import SettingSchduleDeleteComplete from "../admin/SettingSchduleDeleteComplete.vue"; //예약 삭제 완료
-
+import SignIn01 from "../admin/SignIn01.vue"; //로그인
 
 
 function mainLayout(content) {
@@ -33,6 +33,7 @@ function mainLayout(content) {
 function centerLayout(content) {
     return { header: SubHeader, content, footer: MainFooter }
 }
+
 Vue.use(VueRouter);
 
 const routes = [{
@@ -109,8 +110,12 @@ const routes = [{
         path: "/settingSchduleDeleteComplete",
         name: "SettingSchduleDeleteComplete",
         components: centerLayout(SettingSchduleDeleteComplete)
+    },
+    {
+        path: "/signIn01",
+        name: "SignIn01",
+        components: centerLayout(SignIn01)
     }
-
 ];
 
 const router = new VueRouter({
