@@ -1,13 +1,7 @@
 @import "reset";
 @import "fonts";
-@import "@/assets/css/mixin";
-@import "@/assets/css/form";
-
-/* mobile */
-
-$break-mobile: 720px;
-$break-mobileIphone:375px;
-$break-tab:1190px;
+@import "mixin";
+@import "form";
 body {
     -webkit-text-size-adjust: none;
     -moz-text-size-adjust: none;
@@ -38,6 +32,11 @@ footer {
             float: left;
             width: 50%;
             text-align: left;
+            @media screen and (max-width: $break-tab) {
+                float: initial;
+                width: 100%;
+                margin: 0 auto;
+            }
             ul {
                 @include afterSet;
                 li {
@@ -66,6 +65,11 @@ footer {
             width: 50%;
             text-align: right;
             padding: 15px 0;
+            @media screen and (max-width: $break-tab) {
+                float: initial;
+                width: 100%;
+                margin: 0 auto;
+            }
         }
         @media screen and(max-width: $break-tab) {
             max-width: 1190px;
@@ -224,7 +228,7 @@ h1 {
         padding: 60px 40px;
         color: #fff;
         @include boxSizing;
-        @media screen and (max-width: 720px) {
+        @media screen and (max-width: 900px) {
             display: none;
         }
     }
@@ -248,10 +252,10 @@ h1 {
         .info-text-row {
             margin-bottom: 6px;
         }
-        @media screen and (max-width: 720px) {
+        @media screen and (max-width:900px) {
             float: left;
             width: 100%;
-            max-width: 720px;
+            max-width: 900px;
             padding: 1.8em 3.75em;
         }
     }
@@ -340,109 +344,6 @@ h1 {
         font-weight: bold;
         font-size: 16px;
     }
-}
-
-
-/* button style */
-
-.button-wrap {
-    margin-bottom: 80px;
-    text-align: center;
-    button {
-        display: inline-block;
-        margin: 0 auto;
-        text-align: center;
-        font-size: 16px;
-        color: #fff;
-    }
-    .large {
-        min-width: 340px;
-        height: 50px;
-        border-radius: 25px;
-        background-color: #133db1;
-        @media screen and (max-width: 720px) {
-            min-width: 100%;
-            width: 100%;
-        }
-    }
-    .default {
-        width: 220px;
-        height: 44px;
-        border-radius: 22px;
-        background-color: #758298;
-        color: #fff;
-        text-align: center;
-        margin: 0 auto;
-    }
-    .button-primary {
-        background-color: #133db1;
-    }
-    .middle {
-        float: left;
-        min-width: 120px;
-        height: 44px;
-        margin-left: 10px;
-        line-height: 44px;
-        background: #758298;
-        color: #fff;
-        text-align: center;
-        border-radius: 22px;
-        font-size: 14px;
-        margin-bottom: 8px;
-        text-indent: initial;
-    }
-}
-
-.form-button {
-    float: left;
-    width: 100%;
-    @include afterSet;
-    input[type="text"] {
-        float: left;
-        width: 450px;
-    }
-    .button-wrap {
-        margin-bottom: 0;
-    }
-}
-
-.button-wrap.table-form {
-    margin-bottom: 0;
-    @include afterSet;
-    button.button-modify {
-        display: inline-block;
-        width: 90px;
-        padding: 13px 0;
-        background: #758298;
-        color: #fff;
-        text-align: center;
-        border-radius: 22px;
-        font-size: 12px;
-    }
-    button.button-delete {
-        display: inline-block;
-        width: 90px;
-        padding: 13px 0;
-        margin-left: 10px;
-        background: #ef5350;
-        color: #fff;
-        text-align: center;
-        border-radius: 22px;
-        font-size: 12px;
-    }
-    button.small {
-        width: 60px;
-        padding: 5px 0;
-    }
-    button.button-delete.small {
-        margin-left: 4px;
-    }
-}
-
-.table-style2+.button-wrap {
-    width: 124px;
-    float: right;
-    margin-bottom: 50px;
 }
 
 
@@ -811,11 +712,19 @@ h1 {
 
 /* table */
 
+.table-wrap {
+    overflow-x: scroll;
+    width: 100%;
+    white-space: nowrap;
+}
+
 .table-style1 {
+    display: inline-block;
+    width: 100%;
     text-align: center;
     margin-top: 2px;
     margin-bottom: 30px;
-    @include afterSet;
+    white-space: nowrap;
     tr th {
         background-color: #e7edf5;
         font-size: 12px;
@@ -829,6 +738,7 @@ h1 {
         border-bottom: 1px solid #c8d2e2;
         border-left: 1px solid #c8d2e2;
         border-right: 1px solid #c8d2e2;
+        white-space: nowrap;
     }
     tr th:first-child,
     tr td:first-child {
@@ -925,6 +835,96 @@ table {
 .scheduleList-wrap {
     margin-top: 20px;
     padding-bottom: 40px;
+}
+
+
+/* button style */
+
+.button-wrap {
+    margin-bottom: 80px;
+    text-align: center;
+    button {
+        display: inline-block;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 16px;
+        color: #fff;
+    }
+    .large {
+        min-width: 340px;
+        height: 50px;
+        border-radius: 25px;
+        background-color: #133db1;
+        @media screen and (max-width: 720px) {
+            min-width: 100%;
+            width: 100%;
+        }
+    }
+    .default {
+        width: 220px;
+        height: 44px;
+        border-radius: 22px;
+        background-color: #758298;
+        color: #fff;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .button-primary {
+        background-color: #133db1;
+    }
+    .middle {
+        float: left;
+        min-width: 120px;
+        height: 44px;
+        margin-left: 10px;
+        line-height: 44px;
+        background: #758298;
+        color: #fff;
+        text-align: center;
+        border-radius: 22px;
+        font-size: 14px;
+        margin-bottom: 8px;
+        text-indent: initial;
+    }
+}
+
+.button-wrap.table-form {
+    margin-bottom: 0;
+    @include afterSet;
+    button.button-modify {
+        display: inline-block;
+        width: 90px;
+        padding: 13px 0;
+        background: #758298;
+        color: #fff;
+        text-align: center;
+        border-radius: 22px;
+        font-size: 12px;
+    }
+    button.button-delete {
+        display: inline-block;
+        width: 90px;
+        padding: 13px 0;
+        margin-left: 10px;
+        background: #ef5350;
+        color: #fff;
+        text-align: center;
+        border-radius: 22px;
+        font-size: 12px;
+    }
+    button.small {
+        width: 60px;
+        padding: 5px 0;
+    }
+    button.button-delete.small {
+        margin-left: 4px;
+    }
+}
+
+.table-style2+.button-wrap {
+    width: 124px;
+    float: right;
+    margin-bottom: 50px;
 }
 
 

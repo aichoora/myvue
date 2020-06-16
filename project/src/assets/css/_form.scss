@@ -245,7 +245,13 @@ textarea:focus,
         width: 77%;
         border: 1px solid #999;
         @media screen and (max-width: 900px) {
-            width: 100%;
+            width: 73%
+        }
+        @media screen and (max-width: 720px) {
+            width: 74%;
+        }
+        @media screen and (max-width: 380px) {
+            width: 62%;
         }
     }
     input.file-name+.find-file {
@@ -266,12 +272,52 @@ textarea:focus,
         margin-bottom: 8px;
         text-indent: initial;
         @media screen and (max-width: 900px) {
-            float: left;
-            width: 100%;
+            width: 25%
+        }
+        @media screen and (max-width: 720px) {
+            width: 24%;
+        }
+        @media screen and (max-width: 380px) {
+            width: 34%;
         }
     }
     input.file-name+.disabled {
         background-color: #a7afbe;
+    }
+}
+
+
+/* form + 추가 버튼 */
+
+.form-button {
+    float: left;
+    width: 100%;
+    @include afterSet;
+    input[type="text"] {
+        float: left;
+        width: 450px;
+        @media screen and (max-width: 900px) {
+            width: 73%
+        }
+        @media screen and (max-width: 720px) {
+            width: 66%
+        }
+        @media screen and (max-width: 380px) {
+            width: 62%;
+        }
+    }
+    .button-wrap {
+        float: left;
+        margin-bottom: 0;
+        @media screen and (max-width: 900px) {
+            width: 25%
+        }
+        @media screen and (max-width: 720px) {
+            width: 24%;
+        }
+        @media screen and (max-width: 380px) {
+            width: 34%;
+        }
     }
 }
 

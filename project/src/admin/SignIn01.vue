@@ -1,13 +1,13 @@
 <template>
     <div id="center-wrap">
-        <div class="sub-container">
-            <!-- left menu -->
-           <left-navigation></left-navigation>
-
+        <div class="account-container">
+           <div class="left-wrap">
+               <img src="../" alt="side-bg">
+           </div>
             <!-- content start -->
             <div class="content">
 
-                <h2>환경 설정</h2>
+                <h2>로그인인</h2>
                 <h3>상품 설정</h3>
 
                 <!-- form field -->

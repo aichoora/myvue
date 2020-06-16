@@ -8,6 +8,10 @@ html {
     /* 2 */
 }
 
+body {
+    font-size: 14px;
+}
+
 html,
 body,
 div,
@@ -121,6 +125,11 @@ nav,
 section,
 summary {
     display: block;
+}
+
+fieldset {
+    -webkit-min-width: 0;
+    min-width: 0;
 }
 
 sub,

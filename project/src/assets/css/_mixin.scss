@@ -1,3 +1,8 @@
+/* break=point */
+
+$break-mobile: 720px;
+$break-mobileIphone:375px;
+$break-tab:1190px;
 // mixin 
 @mixin boxSizing() {
     -webkit-box-sizing: border-box;
