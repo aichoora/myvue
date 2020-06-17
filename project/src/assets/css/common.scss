@@ -200,7 +200,8 @@ h1 {
 
 /* 파트너센터 - 기본 레이아웃 */
 
-#center-wrap, .account-wrap {
+#center-wrap,
+.account-wrap {
     width: 100%;
     min-height: 100vh;
     height: 100%;
@@ -210,21 +211,28 @@ h1 {
         padding-top: 0;
     }
 }
-.account-wrap {padding-top:0}
+
+.account-wrap {
+    padding-top: 0
+}
+
 .account-container {
     @include afterSet;
-    margin:0 auto;
+    margin: 0 auto;
     .left-wrap {
-        float:left;        
-        width:38%;
+        float: left;
+        width: 38%;
+        // background: url(../assets/images/side_bg.png) repeat-y;
+        background-attachment: fixed;
     }
     .content {
-        float:left;
-        width:62%;
-        padding:8.75em 7.5em;
+        float: left;
+        width: 62%;
+        padding: 8.75em 7.5em;
         @include boxSizing;
     }
 }
+
 .sub-container {
     overflow: hidden;
     margin: 0 auto;

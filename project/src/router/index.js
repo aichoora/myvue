@@ -24,6 +24,7 @@ import SettingScheduleModify2 from "../admin/SettingScheduleModify2.vue"; //예�
 import SettingSchduleDelete from "../admin/SettingSchduleDelete.vue"; //예약 삭제
 import SettingSchduleDeleteComplete from "../admin/SettingSchduleDeleteComplete.vue"; //예약 삭제 완료
 import SignIn01 from "../admin/SignIn01.vue"; //로그인
+import SignUpInfo from "../admin/SignUpInfo.vue"; //파트너정보입력력
 
 
 function mainLayout(content) {
@@ -115,6 +116,11 @@ const routes = [{
         path: "/signIn01",
         name: "SignIn01",
         components: centerLayout(SignIn01)
+    },
+    {
+        path: "/signUpInfo",
+        name: "SignUpInfo",
+        components: centerLayout(SignUpInfo)
     }
 ];
 

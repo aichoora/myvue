@@ -1,8 +1,8 @@
 <template>
     <div id="account-wrap">
         <div class="account-container">
-           <div class="left-wrap singUp-wrap">
-               <img src="../assets/images/side_bg.png" alt="side-bg">
+           <div class="left-wrap sign-wrap">
+               <!-- <img src="../assets/images/side_bg.png" alt="side-bg"> -->
            </div>
             <!-- content start -->
             <div class="content">
