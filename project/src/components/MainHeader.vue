@@ -1,8 +1,13 @@
 <template>
     <header id="header">
-        <div class="partner-header">
-            <h1>MYJALI.com</h1>
-            <ul>
+        <div class="user-header">
+            <div class="m-header">
+                <span></span>
+                <span></span>
+                <span></span>      
+            </div>
+            <h1><img src="../assets/images/logo.png" alt="MYJALI.com"></h1>
+            <ul class="gnb">
                 <li>로그인</li>
                 <li>이용안내</li>
                 <li>파트너 가입</li>

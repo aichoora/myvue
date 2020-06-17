@@ -345,3 +345,7 @@ input {
     padding: 0;
     border: 0
 }
+
+select::-ms-expand {
+    display: none;
+}

@@ -1,7 +1,7 @@
 <template>
     <div id="account-wrap">
         <div class="account-container">
-           <div class="left-wrap sign-wrap">
+           <div class="left-wrap signUp-wrap">
                <!-- <img src="../assets/images/side_bg.png" alt="side-bg"> -->
            </div>
             <!-- content start -->
@@ -31,7 +31,7 @@
 
 
                         <div class="form-wrap">
-                             <div class="date-list">
+                            <div class="date-list">
                                 <p>생년월일</p>
                                 <div class="select-form select-year">
                                     <select name="" id="">
@@ -50,7 +50,8 @@
                                 </div>
                             </div>
                         </div> 
-                        <div class="form-wrap">
+
+                        <div class="form-wrap hint-form">
                             <p>비밀번호 힌트질문</p>
                             <div class="select-form">
                                 <select name="" id="">
@@ -58,6 +59,7 @@
                                 </select>
                             </div>   
                         </div> 
+
                         <div class="form-wrap">
                             <label for="">비밀번호 힌트 답변</label>
                             <input type="text" name="" id="" placeholder="답변">
@@ -69,10 +71,13 @@
 
                         <!-- 사업자 정보 -->
                         <h3>사업자 정보</h3>
-                        <div  class="form-middle form-hompage">
-                            <label for="">홈페이지 주소</label>
-                            <input type="text" id="" name="" placeholder="URL">
-                            <p class="last-text">.myjali.com</p>       
+                        <div  class="form-wrap">
+                            <div class="hompage-form">
+                                <label for="">홈페이지 주소</label>
+                                <input type="text" id="" name="" placeholder="URL">
+                                <p class="last-text">.myjali.com</p> 
+                            </div>
+
                             <p class="text">(홈페이지에 사용될 주소를 입력하세요.  예) test00.myjali.com )</p>                 
                         </div>      
 
@@ -94,31 +99,43 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="form-wrap">
                             <label for="">사업자 등록 번호</label>
                             <input type="text" name="" id="" placeholder="숫자만 입력하세요.">
                         </div> 
+
                         <div class="form-wrap">
                             <label for="">서비스 이름</label>
                             <input type="text" name="" id="" placeholder="서비스 이름">
                         </div> 
+
                         <!-- 구글 캡챠 -->
                         <div class="captcha-wrap">
                              i'm not a robot
                         </div>
+
                         <div class="button-wrap last-button-wrap">
                             <button type="button" class="primary large">파트너 가입 신청하기</button>
                         </div>
 
-                    </fieldset>
+                    </fieldset>                    
                 </form>
 
                 <!-- 구글 광고 -->
-               <bottomAdvertisement></bottomAdvertisement>             
+               <bottomAdvertisement></bottomAdvertisement>   
+
+               <!-- 가입 푸터 -->                         
+               <subFooter></subFooter>
             </div>
         </div>
     </div>
 </template>
+
+<script>
+ var aHeight = document.querySelector(".content");
+ console.log(aHeight);
+</script>
 
 <script>
 export default {

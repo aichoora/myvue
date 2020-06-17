@@ -5,6 +5,7 @@ import VueRouter from "vue-router";
 import MainHeader from "../components/MainHeader.vue";
 import MainFooter from "../components/MainFooter.vue";
 import SubHeader from "../components/SubHeader.vue";
+import SubFooter from "../components/SubFooter.vue";
 
 /* page */
 import Home from "../views/Home.vue";
@@ -33,6 +34,10 @@ function mainLayout(content) {
 
 function centerLayout(content) {
     return { header: SubHeader, content, footer: MainFooter }
+}
+
+function signInLayout(content) {
+    return { header: SubHeader, content, footer: SubFooter }
 }
 
 Vue.use(VueRouter);
@@ -115,12 +120,12 @@ const routes = [{
     {
         path: "/signIn01",
         name: "SignIn01",
-        components: centerLayout(SignIn01)
+        components: signInLayout(SignIn01)
     },
     {
         path: "/signUpInfo",
         name: "SignUpInfo",
-        components: centerLayout(SignUpInfo)
+        components: signInLayout(SignUpInfo)
     }
 ];
 

@@ -2,7 +2,7 @@
     <div id="account-wrap">
         <div class="account-container">
            <div class="left-wrap">
-               <img src="../assets/images/side_bg.png" alt="side-bg">
+               <!-- <img src="../assets/images/side_bg.png" alt="side-bg"> -->
            </div>
             <!-- content start -->
             <div class="content">
@@ -15,18 +15,18 @@
                             <label for="">아이디</label>
                             <input type="text" id="" name="" placeholder="E-mail 아이디" >
                             <div class="error-msg">- 이메일을 입력해주세요</div>
-                            <label for="">비밀번호</label>
+                            <label for="" class="pw-label">비밀번호</label>
                             <input type="password" id="" name="" placeholder="비밀번호" >
                             <div class="error-msg">- 비밀번호를 입력해주세요</div>
                         </div>         
-                        <div class="find-infoWrap">
-                            <div class="left-wrap">
+                        <div class="findInfo-wrap">
+                            <div class="left-box">
                                 <input type="radio" name="" id="">
                                 <label for="">아이디 저장</label>
                             </div>
-                            <div class="right-wrap">
+                            <div class="right-box">
                                 <a href="#" class="link">아이디 찾기</a>
-                                <a href="#" class="link">바말번호 재설정</a>
+                                <a href="#" class="link">비밀번호 재설정</a>
                             </div>
                         </div>        
                        
@@ -41,7 +41,9 @@
                 </form>
 
                 <!-- 구글 광고 -->
-               <bottomAdvertisement></bottomAdvertisement>             
+               <bottomAdvertisement></bottomAdvertisement>    
+               <!-- 가입 푸터 -->                         
+               <subFooter></subFooter>         
             </div>
         </div>
     </div>
