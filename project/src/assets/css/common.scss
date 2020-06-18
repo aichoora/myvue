@@ -443,6 +443,10 @@ h1 {
     }
 }
 
+#center-wrap {
+    width: 100%
+}
+
 
 /* personal info - signUp */
 
@@ -470,7 +474,7 @@ h1 {
         float: left;
         max-width: 700px;
         width: 100%;
-        padding: 8.75em 7.5em;
+        padding: 8.75em 0 8.75em 7.5em;
         @include boxSizing;
         @media screen and(max-width: 720px) {
             width: 100%;
@@ -489,8 +493,7 @@ h1 {
                 width: 100%;
                 font-size: 14px;
             }
-            .date-list,
-            .hint-form {
+            .date-list {
                 p {
                     font-size: 12px;
                     color: #333;
@@ -508,15 +511,31 @@ h1 {
                 p {
                     display: inline-block;
                     margin-left: 7px;
+                    font-size: 16px;
+                    color: #666
                 }
             }
         }
     }
     .signUp-wrap {
-        height: 1830px;
+        height: 2061px;
         max-height: 100%;
         background: url('../images/side_bg3.png') repeat-y;
         background-size: 100% 100%;
+    }
+}
+
+.captcha-wrap {
+    margin-bottom: 70px;
+}
+
+.hint-form {
+    margin-top: 30px;
+    p {
+        font-size: 12px;
+        margin-bottom: 2px;
+        color: #333;
+        font-weight: bold;
     }
 }
 
@@ -609,14 +628,6 @@ h1 {
             color: #333;
             font-weight: bold;
         }
-        .info-text {
-            margin-bottom: 20px;
-            font-size: 14px;
-            color: #999;
-        }
-        .info-text-row {
-            margin-bottom: 6px;
-        }
         @media screen and (max-width:900px) {
             float: left;
             width: 100%;
@@ -624,6 +635,16 @@ h1 {
             padding: 1.8em 3.75em;
         }
     }
+}
+
+.form-wrap .info-text {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #999;
+}
+
+.form-wrap .info-text-row {
+    margin-bottom: 6px;
 }
 
 .left-menu {

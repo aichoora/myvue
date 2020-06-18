@@ -75,10 +75,10 @@
                             <div class="hompage-form">
                                 <label for="">홈페이지 주소</label>
                                 <input type="text" id="" name="" placeholder="URL">
-                                <p class="last-text">.myjali.com</p> 
+                                <p >.myjali.com</p> 
                             </div>
 
-                            <p class="text">(홈페이지에 사용될 주소를 입력하세요.  예) test00.myjali.com )</p>                 
+                            <p class="info-text">(홈페이지에 사용될 주소를 입력하세요.  예) test00.myjali.com )</p>                 
                         </div>      
 
                         <div class="form-wrap tree-chk">
@@ -110,9 +110,9 @@
                             <input type="text" name="" id="" placeholder="서비스 이름">
                         </div> 
 
-                        <!-- 구글 캡챠 -->
+                        <!-- 구글 캡챠 : 캡챠 넣으셨는데 이미지 크기가 이상하면 말씀 주세여~~ -->
                         <div class="captcha-wrap">
-                             i'm not a robot
+                            <img src="../assets/images/robo.png" alt="" style="width:340px">
                         </div>
 
                         <div class="button-wrap last-button-wrap">

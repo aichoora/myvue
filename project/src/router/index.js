@@ -1,6 +1,5 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-
 /* Layout */
 import MainHeader from "../components/MainHeader.vue";
 import MainFooter from "../components/MainFooter.vue";
@@ -11,6 +10,9 @@ import SubFooter from "../components/SubFooter.vue";
 import Home from "../views/Home.vue";
 import About from "../views/About.vue";
 import Partner from "../views/Partner.vue";
+/* sample */
+import CodingList from "../views/Codinglist.vue";
+import SampleLayout from "../views/sampleLayout.vue";
 
 /* admin */
 import SettingSite from "../admin/SettingSite.vue"; //사이트설정
@@ -43,6 +45,16 @@ function signInLayout(content) {
 Vue.use(VueRouter);
 
 const routes = [{
+        path: "/codingList",
+        name: "CodingList",
+        components: mainLayout(CodingList)
+    },
+    {
+        path: "/sampleLayout",
+        name: "SampleLayout",
+        components: mainLayout(SampleLayout)
+    },
+    {
         path: "/",
         name: "Home",
         components: mainLayout(Home)
