@@ -64,7 +64,6 @@
                             <label for="">비밀번호 힌트 답변</label>
                             <input type="text" name="" id="" placeholder="답변">
                         </div> 
-                        
                         <div class="form-wrap">
                             <label for="">전화번호</label>
                             <input type="text" name="" id="" placeholder="숫자만 입력하세요.">
@@ -132,6 +131,7 @@
         </div>
     </div>
 </template>
+
 
 
 <script>

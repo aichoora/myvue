@@ -26,8 +26,17 @@ import SettingScheduleModify from "../admin/SettingScheduleModify.vue"; //예약
 import SettingScheduleModify2 from "../admin/SettingScheduleModify2.vue"; //예약 수정(스케쥴없음)
 import SettingSchduleDelete from "../admin/SettingSchduleDelete.vue"; //예약 삭제
 import SettingSchduleDeleteComplete from "../admin/SettingSchduleDeleteComplete.vue"; //예약 삭제 완료
+/* SignIn */
 import SignIn01 from "../admin/SignIn01.vue"; //로그인
-import SignUpInfo from "../admin/SignUpInfo.vue"; //파트너정보입력력
+import SignUpInfo from "../admin/SignUpInfo.vue"; //파트너정보입력
+import SignUpTerms from "../admin/SignUp_Terms.vue"; //약관동의
+import SignUpComplete from "../admin/SignUpComplete.vue"; //가입완료
+import FindID from "../admin/FindID.vue"; //아이디찾기
+import FindIDFailed from "../admin/FindIDFailed.vue"; //아이디찾기 실패 FindPassword
+import FindIDComplete from "../admin/FindIDComplete.vue"; //아이디찾기완료
+import FindPassword from "../admin/FindPassword.vue"; //비밀번호 찾기
+import FindPasswordComplete from "../admin/FindPasswordComplete.vue"; //비밀번호 변경
+import FindPasswordComplete2 from "../admin/FindPasswordComplete2.vue"; //비밀번호 재설정
 
 
 function mainLayout(content) {
@@ -138,6 +147,46 @@ const routes = [{
         path: "/signUpInfo",
         name: "SignUpInfo",
         components: signInLayout(SignUpInfo)
+    },
+    {
+        path: "/SignUpTerms",
+        name: "SignUpTerms",
+        components: signInLayout(SignUpTerms)
+    },
+    {
+        path: "/SignUpComplete",
+        name: "SignUpComplete",
+        components: signInLayout(SignUpComplete)
+    },
+    {
+        path: "/FindID",
+        name: "FindID",
+        components: signInLayout(FindID)
+    },
+    {
+        path: "/FindIDFailed",
+        name: "FindIDFailed",
+        components: signInLayout(FindIDFailed)
+    },
+    {
+        path: "/FindIDComplete",
+        name: "FindIDComplete",
+        components: signInLayout(FindIDComplete)
+    },
+    {
+        path: "/FindPassword",
+        name: "FindPassword",
+        components: signInLayout(FindPassword)
+    },
+    {
+        path: "/FindPasswordComplete",
+        name: "FindPasswordComplete",
+        components: signInLayout(FindPasswordComplete)
+    },
+    {
+        path: "/FindPasswordComplete2",
+        name: "FindPasswordComplete2",
+        components: signInLayout(FindPasswordComplete2)
     }
 ];
 

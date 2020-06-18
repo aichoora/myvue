@@ -523,6 +523,45 @@ h1 {
         background: url('../images/side_bg3.png') repeat-y;
         background-size: 100% 100%;
     }
+    .findId-wrap {
+        height: 1080px;
+        max-height: 100%;
+        background: url('../images/side_bg2.png') repeat-y;
+        background-size: 100% 100%;
+    }
+    .login-wrap {
+        height: 1080px;
+        max-height: 100%;
+        background: url('../images/side_bg.png') repeat-y;
+        background-size: 100% 100%;
+    }
+    .signUp-wrap.style2 {
+        height: 1210px
+    }
+    //약관동의
+    .terms-title {
+        font-size: 12px;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 2px;
+    }
+    .terms-wrap {
+        overflow-y: scroll;
+        height: 200px;
+        padding: 10px;
+        color: #333;
+        font-size: 12px;
+        border: 1px solid #ccc;
+        h5 {
+            margin: 20px 0;
+        }
+        ul li {
+            margin-top: 10px;
+        }
+    }
+    .terms-wrap+form {
+        margin-top: 10px;
+    }
 }
 
 .captcha-wrap {
