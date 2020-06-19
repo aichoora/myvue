@@ -1,7 +1,7 @@
 <template>
     <div id="account-wrap">
         <div class="account-container">
-           <div class="left-wrap signUp-wrap style2"></div>
+           <div class="left-wrap signUp-wrap short"></div>
             <!-- content start -->
             <div class="content">
 

@@ -8,7 +8,7 @@
                 <ul>
                     <li><router-link to="/SettingSite">환경 설정</router-link> </li>
                     <li><router-link to="/SettingSchedule">예약 설정</router-link> </li>
-                    <li><router-link to="/Partner">메뉴 설정</router-link></li>          
+                    <li><router-link to="/settingMenu">메뉴 설정</router-link></li>          
                 </ul>
             </div>
             <!-- top-nav component -->

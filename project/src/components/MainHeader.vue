@@ -8,9 +8,9 @@
             </div>
             <h1><img src="../assets/images/logo.png" alt="MYJALI.com"></h1>
             <ul class="gnb">
-                <li>로그인</li>
+                <li><router-link to="/SignIn">로그인</router-link></li>
                 <li>이용안내</li>
-                <li>파트너 가입</li>
+                <li><router-link to="/SignUpInfo">파트너 가입</router-link></li>
             </ul>
         </div>
     </header>    

@@ -4,9 +4,8 @@
            <div class="left-wrap findId-wrap"></div>
             <!-- content start -->
             <div class="content">
-
                 <h2>아이디 찾기</h2>
-                <p>파트너 가입시 등록하신 이름과 생년월일을 입력해주세요.</p>
+                <p class="sub-text">파트너 가입시 등록하신 이름과 생년월일을 입력해주세요.</p>
                 <!-- form field -->
                 <form action="">
                     <fieldset>  

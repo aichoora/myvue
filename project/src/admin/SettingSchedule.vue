@@ -32,8 +32,8 @@
                                 </div>
                             </div>
                             <!-- 유효성검사 실패시 error 클래스 추가 -->
-                            <div class="form-large error">
-                                <input type="text"  name="" id="" placeholder="예약 이름">
+                            <div class="form-large">
+                                <input type="text" class="error"  name="" id="" placeholder="예약 이름">
                                 <label for="">예약 이름 </label>
                                 <div class="error-msg" id="error-msg">error massage</div>
                             </div>
@@ -66,19 +66,21 @@
                                     </select>
                                 </div>
                             </div>
+                            
+                            <!-- 유효성검사 실패시 error 클래스 추가 -->
                             <div class="date-list">
                                 <p>종료일</p>
-                                <div class="select-form select-year">
+                                <div class="select-form select-year error">
                                     <select name="" id="">
                                         <option value="년">년</option>
                                     </select>
                                 </div>
-                                <div class="select-form select-month">
+                                <div class="select-form select-month error">
                                     <select name="" id="">
                                         <option value="월">월</option>
                                     </select>
                                 </div>
-                                <div class="select-form select-day">
+                                <div class="select-form select-day error">
                                     <select name="" id="">
                                         <option value="일">일</option>
                                     </select>
@@ -99,7 +101,7 @@
                                     <label for="">미사용</label>
                                 </div>
                             </div>
-                            <p class="info-text">- 부가 상품 사용 시 환경 설정 > 상품 설정 메뉴에서 등록한 부가 상품 리스트가 고객님의 예약 화면에 표시 됩니다.</p>
+                            <p class="info-text style2">- 부가 상품 사용 시 환경 설정 > 상품 설정 메뉴에서 등록한 부가 상품 리스트가 고객님의 예약 화면에 표시 됩니다.</p>
                         </div>
 
                         <p class="title">상세 정보 입력</p> 
@@ -166,9 +168,17 @@
                             <div class="setting-shipNum"> 
                                 <p>선박 정원 (예약 인원)</p>
                                 <div class="select-form select-wrap">
-                                    <label for="">선박 정원 (예약 인원)</label>
-                                    <select name="" id="">
-                                        <option value="20명">20명</option>
+                                    <label for="totalCnt">선박 정원 (예약 인원)</label>
+                                    <select  name="totalCnt" id="totalCnt" @change="cntSetting('T');">
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                        <option value="17">17</option>
+                                        <option value="18">18</option>
+                                        <option value="19">19</option>
+                                        <option value="20">20</option>
                                     </select>
                                 </div>
                             </div>
@@ -179,44 +189,35 @@
                                     <div class="left-wrap">
                                             <p>좌현 인원</p>
                                         <div class="select-form select-wrap">
-                                            <label for="">좌현 인원</label>
-                                            <select name="" id="">
-                                                <option value="15명">15명</option>
-                                            </select>
-                                        </div>
-                                        <div class="switch-wrap">
+                                            <label for="leftCnt">좌현 인원</label>
+                                            <select name="leftCnt" id="leftCnt"  @change="cntSetting('L');"></select>
+                                        </div>             
+                                         <div class="switch-wrap">
                                             <span>선수 순</span>
                                             <div class="switch-box">
                                                 <input type="checkbox" name="" id="chk1" class="swich-input">
                                                 <label for="chk1"></label>
                                             </div>
                                             <span>선미 순</span>
-                                        </div>
+                                        </div>                           
                                     </div>
                                     <div class="right-wrap">
                                         <p>우현 인원</p>
                                         <div class="select-form select-wrap">                                            
-                                            <label for="">우현 인원</label>
-                                            <select name="" id="">
-                                                <option value="5명">5명</option>
-                                            </select>
-                                        </div>
-                                        <div class="switch-wrap">
-                                            <span>선수 순</span>
-                                            <div class="switch-box">
-                                                <input type="checkbox" name="" id="chk12" class="swich-input">
-                                                <label for="chk12"></label>
-                                            </div>
-                                            <span>선미 순</span>
-                                        </div>
-                                    </div>
+                                            <label for="rightCnt">우현 인원</label>
+                                            <select name="rightCnt" style="width:100px;"  @change="cntSetting('R');" ></select>
+                                        </div>         
+                                        <div class="resultButton-wrap">
+                                            <input type="button"  @change="jaliSetting();" value="미리보기" />
+                                        </div>                               
+                                    </div>                                    
                                 </div>
                                 <div class="middle-container">
                                     <span class="top">선수</span>
                                     <span class="left">좌현</span>
                                     <span class="right">우현</span>
                                     <span class="bottom">선미</span>
-                                    <ul class="left-ship">
+                                    <!-- <ul class="left-ship">
                                         <li>
                                             <input type="checkbox" name="" id="btn1" class="button_occupy">
                                             <label for="btn1">1</label>
@@ -239,7 +240,6 @@
                                             <label for="btn5">5</label>
                                         </li>
                                     </ul>   
-                                    <!-- <img src="./ship.png" alt=""> -->
                                     <ul class="right-ship">
                                         <li>
                                             <input type="checkbox" name="" id="btn21" class="button_empty">
@@ -249,7 +249,29 @@
                                             <input type="checkbox" name="" id="btn22" class="button_not" disabled="disabled">
                                             <label for="btn22">22</label>
                                         </li>
-                                    </ul>   
+                                    </ul>    -->
+                                    <div>
+                                        <div id="img1" class="myjari"></div>
+                                        <div id="img2" class="myjari"></div>
+                                        <div id="img3" class="myjari"></div>
+                                        <div id="img4" class="myjari"></div>
+                                        <div id="img5" class="myjari"></div>
+                                        <div id="img6" class="myjari"></div>
+                                        <div id="img7" class="myjari"></div>
+                                        <div id="img8" class="myjari"></div>
+                                        <div id="img9" class="myjari"></div>
+                                        <div id="img10" class="myjari"></div>
+                                        <div id="img11" class="myjari"></div>
+                                        <div id="img12" class="myjari"></div>
+                                        <div id="img13" class="myjari"></div>
+                                        <div id="img14" class="myjari"></div>
+                                        <div id="img15" class="myjari"></div>
+                                        <div id="img16" class="myjari"></div>
+                                        <div id="img17" class="myjari"></div>
+                                        <div id="img18" class="myjari"></div>
+                                        <div id="img19" class="myjari"></div>
+                                        <div id="img20" class="myjari"></div>
+                                    </div>
                                 </div>
                                 <div class="bottom-container">
                                     <ul class="list-box">
@@ -283,4 +305,128 @@
 export default {
     name : "SettingSchedule"
 }
+
+
+// new Vue({
+//   el: "#centerWrap",
+//   methods: {
+//     cntSetting: function(pos) {
+// 			var tmpTotalCnt = document.querySelector("select[name=totalCnt]").value;
+// 			for(var i = 0; i < 20; i++) {
+// 				document.querySelector("#img" + (i+1)).style.display = "none";
+// 			}
+
+// 			if(pos == "T") {
+// 				var tmpLeftCount = Math.round(tmpTotalCnt / 2);
+//                 var tmpRightCount = tmpTotalCnt - tmpLeftCount;
+//                 var tmpRightCountVal = tmpRightCount.value;
+
+// 				document.querySelector("select[name=leftCnt]").innerHTML = null;
+// 				for(var i = 0; i <= tmpTotalCnt; i++) {
+// 					var option = document.querySelector("<option value=\"" + i + "\">" + i + "</option>");
+// 					document.querySelector("select[name=leftCnt]").append(option);
+// 	            }
+// 	            document.querySelector("select[name=leftCnt]").tmpLeftCount.value;
+
+// 				document.querySelector("select[name=rightCnt]").innerHTML = null;
+// 				for(var i = 0; i <= tmpTotalCnt; i++) {
+// 					var option = document.querySelector("<option value=\"" + i + "\">" + i + "</option>");
+// 					document.querySelector("select[name=rightCnt]").append(option);
+// 	            }
+// 	            document.querySelector("select[name=rightCnt]").tmpRightCountVal;
+// 			} else if(pos == "L") {
+// 				var tmpleftCnt = document.querySelector("select[name=leftCnt]").value;
+// 				var tmpRightCnt = tmpTotalCnt - tmpleftCnt;
+// 	            document.querySelector("select[name=rightCnt]").val(tmpRightCnt);
+// 			} else if(pos == "R") {
+// 				var tmpRightCnt = document.querySelector("select[name=rightCnt]").value;
+// 				var tmpleftCnt = tmpTotalCnt - tmpRightCnt;
+// 	            document.querySelector("select[name=leftCnt]").tmpleftCnt.value;
+//             }
+//         },
+//     jaliSetting: function() {
+//         var leftX   = 100; // ���� X ��ǥ
+// 			var rightX  = 435; // ���� X ��ǥ
+// 			var topY    = 180; // ���� Y ��ǥ (�ֻ��)
+// 			var bottomY = 711; // ���� Y ��ǥ (���ϴ�)
+
+// 			var distanceY = bottomY - topY;
+// 			var oneStepY = 0;
+// 			var tmpArr;
+// 			var completeArr;
+
+// 			var inputTotalCnt = parseInt(document.querySelector("select[name=totalCnt]").value);
+// 			var inputLeftCnt = parseInt(document.querySelector("select[name=leftCnt]").value);
+// 			var inputRightCnt = parseInt(document.querySelector("select[name=rightCnt]").value);
+// 			var inputPrimaryOrder = document.querySelector(':radio[name="primaryOrder"]:checked').value;
+// 			// console.log("inputTotalCnt[" + inputTotalCnt + "] inputLeftCnt[" + inputLeftCnt + "] inputRightCnt[" + inputRightCnt + "] inputPrimaryOrder[" + inputPrimaryOrder + "]");
+
+// 			if(inputLeftCnt > 0 || inputRightCnt > 0) {
+// 				// tmpArr�� Y ��ǥ ����
+// 				if(inputLeftCnt >= inputRightCnt) {
+// 					oneStepY = distanceY / (inputLeftCnt - 1);
+// 					tmpArr = new Array(inputLeftCnt);
+// 					for(var i = 0; i < inputLeftCnt; i++) {
+// 						tmpArr[i] = parseInt(topY + (i * oneStepY));
+// 					}
+// 				} else {
+// 					oneStepY = distanceY / (inputRightCnt - 1);
+// 					tmpArr = new Array(inputRightCnt);
+// 					for(var i = 0; i < inputRightCnt; i++) {
+// 						tmpArr[i] = parseInt(topY + (i * oneStepY));
+// 					}
+// 				}
+
+// 				// completeArr ����
+// 				completeArr = new Array(inputTotalCnt);
+// 				if(inputLeftCnt >= inputRightCnt) {
+// 					console.clear();
+// 					console.log("===== ������������ Y ��ǥ ���� �� �ڸ� ä��� ���ð��� ���� ���� ��ġ =====");
+
+// 					for(var i = 0; i < inputLeftCnt; i++) {
+// 						completeArr[i] = leftX + "," + tmpArr[i];
+// 					}
+// 					for(var i = 0; i < inputRightCnt; i++) {
+// 						if(inputPrimaryOrder == 1) {
+// 							completeArr[inputLeftCnt+i] = rightX + "," + tmpArr[i];
+// 						} else {
+// 							completeArr[inputLeftCnt+i] = rightX + "," + tmpArr[inputLeftCnt-inputRightCnt+i];
+// 						}
+// 					}
+// 				} else {
+// 					console.clear();
+// 					console.log("===== ������������ Y ��ǥ ���� �� �ڸ� ä��� ���ð��� ���� ���� ��ġ =====");
+
+// 					for(var i = 0; i < inputLeftCnt; i++) {
+// 						if(inputPrimaryOrder == 1) {
+// 							completeArr[i] = leftX + "," + tmpArr[i];
+// 						} else {
+// 							completeArr[i] = leftX + "," + tmpArr[inputRightCnt-inputLeftCnt+i];
+// 						}
+// 					}
+// 					for(var i = 0; i < inputRightCnt; i++) {
+// 						completeArr[inputLeftCnt+i] = rightX + "," + tmpArr[i];
+// 					}
+// 				}
+
+// 				// Test log
+// 				console.log("* �ڸ� ��ȣ�� ���� �������� ����, �̾ ���� �������� ������ ������ �Ű����ϴ�.");
+// 				for(var i = 0; i < inputTotalCnt; i++) {
+// 					console.log((i+1) + "�� �ڸ� Image ��ǥ [" + completeArr[i] + "]");
+// 				}
+
+// 				// Display
+// 				for(var i = 0; i < inputTotalCnt; i++) {
+// 					var xyPosition = completeArr[i].split(",");
+// 					document.querySelector("#img" + (i+1)).css("left", parseInt(xyPosition[0]));
+// 					document.querySelector("#img" + (i+1)).css("top", parseInt(xyPosition[1]));
+// 					document.querySelector("#img" + (i+1)).show();
+// 				}
+// 			}
+// 			alert("Partner�� �̷��� ����� �ͱ��� �մϴ�.\n���߿� �ڸ� �����Ϸ� ���� User���� �� ��� �״�� �������ϴ�.");
+
+//     }
+//   }
+// })
+
 </script>

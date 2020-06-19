@@ -6,7 +6,7 @@
             <div class="content">
 
                 <h2>아이디 찾기</h2>
-                <p>입력하신 정보와 일치하는 내용이 없습니다.</p>
+                <p class="sub-text">입력하신 정보와 일치하는 내용이 없습니다.</p>
                 <div class="table-wrap">
                      <table class="table-style2">
                         <caption>아이디 찾기</caption>

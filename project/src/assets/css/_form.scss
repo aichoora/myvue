@@ -81,16 +81,6 @@ input[type="text"]+label {
 }
 
 .form-wrap {
-    input[type="text"],
-    input[type="password"] {
-        @include boxSizing;
-        padding: 10px 12px;
-        color: #999;
-        border-radius: 4px;
-        border: solid 1px #b9b9b9;
-        font-size: 14px;
-        margin-bottom: 8px;
-    }
     .form-large>input {
         width: 100%;
         @include boxSizing;
@@ -99,6 +89,17 @@ input[type="text"]+label {
         width: 70%;
         @include boxSizing;
     }
+}
+
+input[type="text"],
+input[type="password"] {
+    @include boxSizing;
+    padding: 10px 12px;
+    color: #999;
+    border-radius: 4px;
+    border: solid 1px #b9b9b9;
+    font-size: 14px;
+    margin-bottom: 8px;
 }
 
 .login-form {
@@ -155,6 +156,13 @@ select {
     }
 }
 
+.select-form.error {
+    border-color: #e53935;
+    select {
+        color: #e53935
+    }
+}
+
 .select-form::before {
     display: inline-block;
     content: '';
@@ -175,34 +183,27 @@ select {
 
 .date-list {
     @include afterSet;
-    position: relative;
     width: 100%;
     height: 62px;
+    margin-bottom: 8px;
     p {
         margin-bottom: 4px;
     }
     .select-form {
-        position: absolute;
-        left: 0;
-        width: 32.6%;
-        @media screen and (max-width: 412px) {
+        float: left;
+        width: 32%;
+        @media screen and (max-width: 500px) {
+            display: block;
             width: 100%;
             margin-bottom: 8px;
         }
     }
     .select-month {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        @media screen and (max-width: 412px) {
+        margin: 0 1.2%;
+        @media screen and (max-width: 500px) {
             margin: 0;
             margin-bottom: 8px;
         }
-    }
-    .select-day {
-        position: absolute;
-        left: auto;
-        right: 0;
     }
 }
 
@@ -254,6 +255,7 @@ select {
 /* infut focus */
 
 input[type="text"]:focus,
+input[type="password"]:focus,
 select:focus,
 textarea:focus,
 .select-form:focus {
@@ -333,11 +335,11 @@ textarea:focus,
     input[type="text"] {
         float: left;
         width: 450px;
-        @media screen and (max-width: 900px) {
-            width: 73%
+        @media screen and (max-width: 1250px) {
+            width: 75%
         }
         @media screen and (max-width: 720px) {
-            width: 66%
+            width: 76%
         }
         @media screen and (max-width: 380px) {
             width: 62%;
@@ -346,14 +348,21 @@ textarea:focus,
     .button-wrap {
         float: left;
         margin-bottom: 0;
-        @media screen and (max-width: 900px) {
+        @media screen and (min-width: 1251px) {
+            width: 130px
+        }
+        @media screen and (max-width: 1250px) {
             width: 25%
         }
         @media screen and (max-width: 720px) {
             width: 24%;
         }
         @media screen and (max-width: 380px) {
-            width: 34%;
+            width: 38%;
+        }
+        .middle {
+            float: right;
+            min-width: 91%
         }
     }
 }
@@ -443,16 +452,15 @@ textarea:focus,
     color: #e53935;
 }
 
-.form-large.error,
-.form-wrap.error {
-    input {
-        border-color: #e53935;
-        ;
-        color: #e53935;
+input.error {
+    border-color: #e53935;
+    color: #e53935;
+    &:focus {
+        color: #3c6def
     }
 }
 
-.form-large {
+.form-wrap {
     .error-msg {
         font-size: 14px;
         word-break: keep-all;

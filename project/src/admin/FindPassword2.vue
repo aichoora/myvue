@@ -6,28 +6,18 @@
             <div class="content">
 
                 <h2>비밀번호 재설정</h2>
-                 <p class="sub-text">파트너 가입시 등록하신 아이디와 비밀번호 힌트 질문/답변을 입력해주세요.</p>
+                <p class="sub-text">비밀번호 힌트 확인이 완료 되었습니다.<br/>새롭게 사용하실 비밀번호를 확인해주세요.</p>
                 <!-- form field -->
                 <form action="">
                     <fieldset>  
-                         <div class="form-wrap">
-                            <label for="">아이디 (Email)</label>
-                            <input type="text" name="" id="" placeholder="아이디로 사용하실 이메일을 입력해주세요.">
-                        </div>  
-
-                        <div class="form-wrap hint-form">
-                            <p>비밀번호 힌트질문</p>
-                            <div class="select-form">
-                                <select name="" id="">
-                                    <option value="내 별명은?">내 별명은?</option>
-                                </select>
-                            </div>   
-                        </div> 
-
                         <div class="form-wrap">
-                            <label for="">비밀번호 힌트 답변</label>
-                            <input type="text" name="" id="" placeholder="답변">
-                        </div> 
+                            <label for="">비밀번호</label>
+                            <input type="password" name="" id="" placeholder="비밀번호를 입력해주세요.">
+                        </div>   
+                        <div class="form-wrap">
+                            <label for="">비밀번호 확인</label>
+                            <input type="password" name="" id="" placeholder="비밀번호를 다시 한번 입력해주세요.">
+                        </div>  
 
                         <!-- 구글 캡챠 : 캡챠 넣으셨는데 이미지 크기가 이상하면 말씀 주세여~~ -->
                         <div class="captcha-wrap">
@@ -53,6 +43,6 @@
 
 <script>
 export default {
-    name : "FindPassword"
+    name : "FindPasswordComplete"
 }
 </script>

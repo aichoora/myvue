@@ -89,16 +89,32 @@
                     <label for="">예약 이름 </label>
                 </div>
             </div> 
-            1-1. 에러 메시지(form-wrap, form-large에 error 클래스 추가)
+            1-1. 에러 메시지(input에 error 클래스 추가)
             <div class="form-wrap">
                  <!-- 유효성검사 실패시 error 클래스 추가 -->
-                <div class="form-large error">
-                    <input type="text"  name="" id="" placeholder="예약 이름 오류">
+                <div class="form-large">
+                    <input type="text" class="error"  name="" id="" placeholder="예약 이름 오류">
                     <label for="">예약 이름 </label>
                     <div class="error-msg" id="error-msg">error massage</div>
                 </div>
             </div>
-            
+            1-2. 다중 에러 메시지
+            <div class="form-wrap">
+                <p class="title">계좌정보 등록 (계좌번호)</p>
+                <div class="account-form">
+                    <div class="select-form error">
+                        <select name="" id=""><option value="은행">은행</option></select>
+                    </div>
+                    <input type="text" class="error" name="" id="" placeholder="예금주 명">
+                    <label for="">예금주 명</label>
+                </div>
+                <div class="error-msg" id="error-msg">error massage</div>
+                <div class="form-large">
+                    <input type="text" class="error" name="" id="" placeholder="계좌번호(- 제외)">
+                    <label for="">계좌번호(- 제외)</label>
+                    <div class="error-msg" id="error-msg">error massage</div>
+                </div>
+            </div>
             2. full-block form(라벨 제목 있음)
             <div class="form-wrap">
                 <div class="form-large">

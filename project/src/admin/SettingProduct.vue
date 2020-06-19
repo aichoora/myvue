@@ -50,7 +50,7 @@
                                     <col width="15%">
                                     <col width="">
                                     <col width="15%">
-                                    <col width="">
+                                    <col width="19%">
                                 </colgroup>
                                 <thead>
                                     <tr>
@@ -226,7 +226,7 @@
                             </table>
                         </div>
                          <div class="button-wrap last-button-wrap">
-                            <button type="button" class="primary large">환경 설정 등록</button>
+                            <button type="button" class="primary large">확인</button>
                         </div>
                     </fieldset>
                 </form>

@@ -16,7 +16,7 @@ import SampleLayout from "../views/sampleLayout.vue";
 
 /* admin */
 import SettingSite from "../admin/SettingSite.vue"; //사이트설정
-import SettingProduct from "../admin/SettingProduct.vue"; //상품설정정
+import SettingProduct from "../admin/SettingProduct.vue"; //상품설정
 import SettingSchedule from "../admin/SettingSchedule.vue" //예약 등록
 import SettingScheduleList from "../admin/SettingScheduleList.vue"; //예약 리스트
 import SettingMenu from "../admin/SettingMenu.vue"; //메뉴 설정
@@ -27,7 +27,7 @@ import SettingScheduleModify2 from "../admin/SettingScheduleModify2.vue"; //예�
 import SettingSchduleDelete from "../admin/SettingSchduleDelete.vue"; //예약 삭제
 import SettingSchduleDeleteComplete from "../admin/SettingSchduleDeleteComplete.vue"; //예약 삭제 완료
 /* SignIn */
-import SignIn01 from "../admin/SignIn01.vue"; //로그인
+import SignIn from "../admin/SignIn.vue"; //로그인
 import SignUpInfo from "../admin/SignUpInfo.vue"; //파트너정보입력
 import SignUpTerms from "../admin/SignUp_Terms.vue"; //약관동의
 import SignUpComplete from "../admin/SignUpComplete.vue"; //가입완료
@@ -35,8 +35,8 @@ import FindID from "../admin/FindID.vue"; //아이디찾기
 import FindIDFailed from "../admin/FindIDFailed.vue"; //아이디찾기 실패 FindPassword
 import FindIDComplete from "../admin/FindIDComplete.vue"; //아이디찾기완료
 import FindPassword from "../admin/FindPassword.vue"; //비밀번호 찾기
-import FindPasswordComplete from "../admin/FindPasswordComplete.vue"; //비밀번호 변경
-import FindPasswordComplete2 from "../admin/FindPasswordComplete2.vue"; //비밀번호 재설정
+import FindPassword2 from "../admin/FindPassword2.vue"; //비밀번호 재설정
+import FindPasswordComplete from "../admin/FindPasswordComplete.vue"; //비밀번호 재설정완료
 
 
 function mainLayout(content) {
@@ -48,7 +48,7 @@ function centerLayout(content) {
 }
 
 function signInLayout(content) {
-    return { header: SubHeader, content, footer: SubFooter }
+    return { header: MainHeader, content, footer: SubFooter }
 }
 
 Vue.use(VueRouter);
@@ -139,9 +139,9 @@ const routes = [{
         components: centerLayout(SettingSchduleDeleteComplete)
     },
     {
-        path: "/signIn01",
-        name: "SignIn01",
-        components: signInLayout(SignIn01)
+        path: "/signIn",
+        name: "SignIn",
+        components: signInLayout(SignIn)
     },
     {
         path: "/signUpInfo",
@@ -179,14 +179,14 @@ const routes = [{
         components: signInLayout(FindPassword)
     },
     {
+        path: "/FindPassword2",
+        name: "FindPassword2",
+        components: signInLayout(FindPassword2)
+    },
+    {
         path: "/FindPasswordComplete",
         name: "FindPasswordComplete",
         components: signInLayout(FindPasswordComplete)
-    },
-    {
-        path: "/FindPasswordComplete2",
-        name: "FindPasswordComplete2",
-        components: signInLayout(FindPasswordComplete2)
     }
 ];
 

@@ -1,9 +1,7 @@
 <template>
     <div id="account-wrap">
         <div class="account-container">
-           <div class="left-wrap">
-               <!-- <img src="../assets/images/side_bg.png" alt="side-bg"> -->
-           </div>
+           <div class="left-wrap short"></div>
             <!-- content start -->
             <div class="content">
 
