@@ -767,6 +767,9 @@ h1 {
             max-width: 900px;
             padding: 1.8em 3.75em;
         }
+        @media screen and (max-width:$break-mobile) {
+            padding: 2.5em 1.75em;
+        }
     }
 }
 
@@ -954,13 +957,13 @@ h1 {
             }
         }
         .resultButton-wrap {
-            input[type="button"] {
+            button {
                 display: block;
                 min-width: 75px;
                 padding: 4px 0;
                 height: 25px;
                 margin: 0 auto;
-                margin-top: 7px;
+                margin-top: 10px;
                 background: #758298;
                 color: #fff;
                 text-align: center;
@@ -1063,6 +1066,15 @@ h1 {
         background-size: 182px 518px;
         background-position: center center;
         @include boxSizing;
+        @include afterSet;
+        @media screen and(max-width: $break-mobile) {
+            padding: 65px 15px 0 15px;
+        }
+        @media screen and(max-width: $break-mobileIphone) {
+            height: 515px;
+            padding: 65px 15px 0 15px;
+            background-size: 140px 350px;
+        }
         .top,
         .left,
         .right,
@@ -1085,10 +1097,18 @@ h1 {
         .left {
             top: 315px;
             left: 160px;
+            @media screen and(max-width: 600px) {
+                top: 50%;
+                left: 18%
+            }
         }
         .right {
             top: 315px;
             right: 160px;
+            @media screen and(max-width: 600px) {
+                top: 50%;
+                right: 18%;
+            }
         }
         .left-ship,
         .right-ship {
@@ -1105,9 +1125,29 @@ h1 {
         li {
             position: relative;
         }
+        .leftJali {
+            -webkit-display: flex;
+            display: flex;
+            flex-direction: column;
+            float: left;
+            width: 22px;
+            height: 90%;
+            text-align: center;
+        }
+        .rightJali {
+            -webkit-display: flex;
+            display: flex;
+            flex-direction: column;
+            float: right;
+            width: 22px;
+            height: 90%;
+            text-align: center;
+        }
+        .reverse {
+            flex-direction: column-reverse;
+        }
         input[type="checkbox"],
-        .myjari {
-            position: absolute;
+        .myjali {
             display: none;
             @include boxSizing;
             width: 22px;
@@ -1116,6 +1156,7 @@ h1 {
             font-size: 11px;
             border: solid 1px #999999;
             background-color: #efefef;
+            cursor: pointer;
         }
         input[type="checkbox"]+label {
             position: absolute;

@@ -169,16 +169,9 @@
                                 <p>선박 정원 (예약 인원)</p>
                                 <div class="select-form select-wrap">
                                     <label for="totalCnt">선박 정원 (예약 인원)</label>
-                                    <select  name="totalCnt" id="totalCnt" @change="cntSetting('T');">
-                                        <option value="12">12</option>
-                                        <option value="13">13</option>
-                                        <option value="14">14</option>
-                                        <option value="15">15</option>
-                                        <option value="16">16</option>
-                                        <option value="17">17</option>
-                                        <option value="18">18</option>
-                                        <option value="19">19</option>
-                                        <option value="20">20</option>
+                                    <select id="totalCnt" name="totalCnt" v-model="totalCnt">
+                                        <option value="">선박 정원 선택</option>
+                                        <option v-for="totalCnt in totalCnts" :selected="totalCnt === '선박 정원 선택'" :key="totalCnt">{{ totalCnt }}</option>
                                     </select>
                                 </div>
                             </div>
@@ -189,8 +182,11 @@
                                     <div class="left-wrap">
                                             <p>좌현 인원</p>
                                         <div class="select-form select-wrap">
-                                            <label for="leftCnt">좌현 인원</label>
-                                            <select name="leftCnt" id="leftCnt"  @change="cntSetting('L');"></select>
+                                            <label for="SelectLeftCnt">좌현 인원</label>
+                                            <select name="SelectLeftCnt" id="SelectLeftCnt" v-model="SelectLeftCnt" >
+                                                <option value="">좌현 인원</option>
+                                                <option v-for="SelectLeftCnt in SelectLeftCnts" :selected="SelectLeftCnt === '좌현인원'" :key="SelectLeftCnt" :value="SelectLeftCnt">{{ SelectLeftCnt }}</option>
+                                            </select>
                                         </div>             
                                          <div class="switch-wrap">
                                             <span>선수 순</span>
@@ -203,12 +199,15 @@
                                     </div>
                                     <div class="right-wrap">
                                         <p>우현 인원</p>
-                                        <div class="select-form select-wrap">                                            
-                                            <label for="rightCnt">우현 인원</label>
-                                            <select name="rightCnt" style="width:100px;"  @change="cntSetting('R');" ></select>
-                                        </div>         
+                                        <div class="select-form select-wrap">
+                                            <label for="SelectRightCnt">우현 인원</label>
+                                            <select name="SelectRightCnt" id="SelectRightCnt" v-model="SelectRightCnt" @change="onChange()">
+                                                    <option value="">우현 인원</option>
+                                                    <option v-for="SelectRightCnt in SelectRightCnts" :selected="SelectRightCnt === '우현인원'" :key="SelectRightCnt" :value="SelectRightCnt">{{ SelectRightCnt }}</option>
+                                            </select>    
+                                        </div>     
                                         <div class="resultButton-wrap">
-                                            <input type="button"  @change="jaliSetting();" value="미리보기" />
+                                            <button v-on:click.prevent="jaliSetting">미리보기</button>
                                         </div>                               
                                     </div>                                    
                                 </div>
@@ -217,60 +216,49 @@
                                     <span class="left">좌현</span>
                                     <span class="right">우현</span>
                                     <span class="bottom">선미</span>
-                                    <!-- <ul class="left-ship">
-                                        <li>
-                                            <input type="checkbox" name="" id="btn1" class="button_occupy">
-                                            <label for="btn1">1</label>
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" name="" id="btn2" class="button_occupy">
-                                            <label for="btn2">2</label>
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" name="" id="btn3" class="button_occupy">
-                                            <label for="btn3">3</label>
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" name="" id="btn4" class="button_occupy">
-                                            <label for="btn4">4</label>
-                                        </li>
-                                        
-                                        <li>
-                                            <input type="checkbox" name="" id="btn5" class="button_occupied" disabled="disabled">
-                                            <label for="btn5">5</label>
-                                        </li>
-                                    </ul>   
-                                    <ul class="right-ship">
-                                        <li>
-                                            <input type="checkbox" name="" id="btn21" class="button_empty">
-                                            <label for="btn21">21</label>
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" name="" id="btn22" class="button_not" disabled="disabled">
-                                            <label for="btn22">22</label>
-                                        </li>
-                                    </ul>    -->
-                                    <div>
-                                        <div id="img1" class="myjari"></div>
-                                        <div id="img2" class="myjari"></div>
-                                        <div id="img3" class="myjari"></div>
-                                        <div id="img4" class="myjari"></div>
-                                        <div id="img5" class="myjari"></div>
-                                        <div id="img6" class="myjari"></div>
-                                        <div id="img7" class="myjari"></div>
-                                        <div id="img8" class="myjari"></div>
-                                        <div id="img9" class="myjari"></div>
-                                        <div id="img10" class="myjari"></div>
-                                        <div id="img11" class="myjari"></div>
-                                        <div id="img12" class="myjari"></div>
-                                        <div id="img13" class="myjari"></div>
-                                        <div id="img14" class="myjari"></div>
-                                        <div id="img15" class="myjari"></div>
-                                        <div id="img16" class="myjari"></div>
-                                        <div id="img17" class="myjari"></div>
-                                        <div id="img18" class="myjari"></div>
-                                        <div id="img19" class="myjari"></div>
-                                        <div id="img20" class="myjari"></div>
+                                    <div class="leftJali">
+                                        <div id="jaliLeft1" class="myjali"><span>1</span></div>
+                                        <div id="jaliLeft2" class="myjali"><span>2</span></div>
+                                        <div id="jaliLeft3" class="myjali"><span>3</span></div>
+                                        <div id="jaliLeft4" class="myjali"><span>4</span></div>
+                                        <div id="jaliLeft5" class="myjali"><span>5</span></div>
+                                        <div id="jaliLeft6" class="myjali"><span>6</span></div>
+                                        <div id="jaliLeft7" class="myjali"><span>7</span></div>
+                                        <div id="jaliLeft8" class="myjali"><span>8</span></div>
+                                        <div id="jaliLeft9" class="myjali"><span>9</span></div>
+                                        <div id="jaliLeft10" class="myjali"><span>10</span></div>
+                                        <div id="jaliLeft11" class="myjali"><span>11</span></div>
+                                        <div id="jaliLeft12" class="myjali"><span>12</span></div>
+                                        <div id="jaliLeft13" class="myjali"><span>13</span></div>
+                                        <div id="jaliLeft14" class="myjali"><span>14</span></div>
+                                        <div id="jaliLeft15" class="myjali"><span>15</span></div>
+                                        <div id="jaliLeft16" class="myjali"><span>16</span></div>
+                                        <div id="jaliLeft17" class="myjali"><span>17</span></div>
+                                        <div id="jaliLeft18" class="myjali"><span>18</span></div>
+                                        <div id="jaliLeft19" class="myjali"><span>19</span></div>
+                                        <div id="jaliLeft20" class="myjali"><span>20</span></div>
+                                    </div>
+                                    <div class="rightJali">
+                                        <div id="jaliRight1" class="myjali"><span>{{ numValue }}</span></div>
+                                        <div id="jaliRight2" class="myjali"><span>{{ numValue }}</span></div>
+                                        <div id="jaliRight3" class="myjali"><span>{{ numValue }}</span></div>
+                                        <div id="jaliRight4" class="myjali"><span>{{ numValue }}</span></div>
+                                        <div id="jaliRight5" class="myjali"><span>{{ numValue }}</span></div>
+                                        <div id="jaliRight6" class="myjali"><span>{{ numValue }}</span></div>
+                                        <div id="jaliRight7" class="myjali"><span>{{ numValue }}</span></div>
+                                        <div id="jaliRight8" class="myjali"><span>{{ numValue }}</span></div>
+                                        <div id="jaliRight9" class="myjali"><span>{{ numValue }}</span></div>
+                                        <div id="jaliRight10" class="myjali"><span>{{ numValue }}</span></div>
+                                        <div id="jaliRight11" class="myjali"><span>{{ numValue }}</span></div>
+                                        <div id="jaliRight12" class="myjali"><span>{{ numValue }}</span></div>
+                                        <div id="jaliRight13" class="myjali"><span>{{ numValue }}</span></div>
+                                        <div id="jaliRight14" class="myjali"><span>{{ numValue }}</span></div>
+                                        <div id="jaliRight15" class="myjali"><span>{{ numValue }}</span></div>
+                                        <div id="jaliRight16" class="myjali"><span>{{ numValue }}</span></div>
+                                        <div id="jaliRight17" class="myjali"><span>{{ numValue }}</span></div>
+                                        <div id="jaliRight18" class="myjali"><span>{{ numValue }}</span></div>
+                                        <div id="jaliRight19" class="myjali"><span>{{ numValue }}</span></div>
+                                        <div id="jaliRight20" class="myjali"><span>{{ numValue }}</span></div>
                                     </div>
                                 </div>
                                 <div class="bottom-container">
@@ -282,18 +270,13 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div>
-
-                      
+                        </div>                      
                         
                         <div class="button-wrap">
                             <button type="button" class="button-primary large">예약 등록</button>
-                        </div>
-                        
+                        </div>                        
                     </fieldset>
-                </form>
-
-                
+                </form>                
                <!-- 구글 광고 -->
                <bottomAdvertisement></bottomAdvertisement>
             </div>
@@ -303,130 +286,123 @@
 
 <script>
 export default {
-    name : "SettingSchedule"
+    name : "SettingSchedule",
+    data: function() {
+        return {
+            totalCnt: '',
+            totalCnts: Array.from({ length: 21 }, (v, i) => i).slice(1), //선박 정원
+            SelectLeftCnt : '',
+            SelectLeftCnts:[], 
+            SelectRightCnt : '',
+            SelectRightCnts : [],
+            numValue : 0
+        }
+    },
+    watch: {
+        totalCnt : function() { //총 정원 선택 후 좌현인원 값 넘기기기
+            this.SelectLeftCnt = '';
+            this.SelectLeftCnts = [];
+            
+            if (this.totalCnt > 0) {
+                var cnt = parseInt(this.totalCnt) + 1;
+                this.SelectLeftCnts = Array.from({length:cnt}, (v, i) => i).slice(1);
+            }         
+        },
+        SelectLeftCnt : function() { //좌현 인원 선택 후 우현정원 구하기
+            this.SelectRightCnt = '';
+            this.SelectRightCnts = [];
+            
+            var totalCntNum = this.totalCnt; //총 정원
+            var cnt = parseInt(this.SelectLeftCnt); //좌현 인원 
+            var result = parseInt(totalCntNum - cnt) + 1 ; //총 정원 -좌현
+            
+            if ( cnt > 0 ){
+                this.SelectRightCnts = Array.from({length:result}, (v, i) => i).slice(1);//우현인원 총 인원값                
+                //좌현값 선택시 우현 최대값 고정                
+                this.SelectRightCnt = result-1;                      
+               
+            } else if (cnt == totalCntNum){ //좌현 = 총인원 => 우현 = 0
+                this.SelectRightCnts = [0];
+            }             
+        }       
+    },
+    methods: {
+        onChange() {
+
+            var totalCntNum2 = this.totalCnt; //총 정원
+            var cnt2 = parseInt(this.SelectRightCnt); //우우현 인원 
+            var result2 = parseInt(totalCntNum2 - cnt2) + 1 ; //총 정원 - 우현
+            if ( cnt2 > 0 ){
+                this.SelectLeftCnts = Array.from({length:result2}, (v, i) => i).slice(1);//좌현인원 총 인원값                
+                this.SelectLeftCnt = result2-1;     
+            }
+        },
+       jaliSetting () {
+            
+            var totalCnt = this.totalCnt; //총 정원
+            var SelectLeftCnt = this.SelectLeftCnt; //좌현 정원 jaliLeft
+            var SelectRightCnt = this.SelectRightCnt; //우현 정원 jaliRight
+            for(var m = 0; m < 20; m++) { 
+                    // 자리 clear
+                    var int3 = document.querySelector("#jaliLeft" + (m+1));      
+                    var int4 = document.querySelector("#jaliRight" + (m+1));                    
+                    int3.style.display = "none";              
+                    int4.style.display = "none";
+                    //console.log(m);
+                } 
+            if( totalCnt == 0) {
+                alert("선박 정원을 모두 선택해주세요!");   
+            }else {
+                  
+                //좌현 인원
+                if( SelectLeftCnt > 0 ) {
+                    for(var i = 0; i < SelectLeftCnt; i++) { 
+                        var int = document.querySelector("#jaliLeft" + (i+1));                    
+                        int.style.display = "block";
+
+                    }    
+                    //우현 인원
+                    if( SelectRightCnt > 0 ) {
+                        for(var j= 0; j < SelectRightCnt; j++) { 
+                            var int2 = document.querySelector("#jaliRight" + (j+1));                    
+                            int2.style.display = "block";
+                        }
+                        //span 숫자 채우기 // SelectLeftCnt                            
+                        var numValue2 = parseInt(totalCnt - SelectLeftCnt);// 우
+                        var SelectLeftCnt2 = parseInt(SelectLeftCnt)//좌          
+                        console.log('1.'+ numValue2, SelectLeftCnt2); // 우, 좌 
+
+                        for(var p=SelectLeftCnt2; p < totalCnt; p++ ) {           //우현정원 = p     2<4
+                            
+                            this.numValue = SelectLeftCnt2 +1;
+
+                            console.log('2.'+ SelectLeftCnt2, totalCnt ); //총인원
+                        }
+                    }      
+                }
+            }            
+       }
+    }
 }
 
-
-// new Vue({
-//   el: "#centerWrap",
-//   methods: {
-//     cntSetting: function(pos) {
-// 			var tmpTotalCnt = document.querySelector("select[name=totalCnt]").value;
-// 			for(var i = 0; i < 20; i++) {
-// 				document.querySelector("#img" + (i+1)).style.display = "none";
-// 			}
-
-// 			if(pos == "T") {
-// 				var tmpLeftCount = Math.round(tmpTotalCnt / 2);
-//                 var tmpRightCount = tmpTotalCnt - tmpLeftCount;
-//                 var tmpRightCountVal = tmpRightCount.value;
-
-// 				document.querySelector("select[name=leftCnt]").innerHTML = null;
-// 				for(var i = 0; i <= tmpTotalCnt; i++) {
-// 					var option = document.querySelector("<option value=\"" + i + "\">" + i + "</option>");
-// 					document.querySelector("select[name=leftCnt]").append(option);
-// 	            }
-// 	            document.querySelector("select[name=leftCnt]").tmpLeftCount.value;
-
-// 				document.querySelector("select[name=rightCnt]").innerHTML = null;
-// 				for(var i = 0; i <= tmpTotalCnt; i++) {
-// 					var option = document.querySelector("<option value=\"" + i + "\">" + i + "</option>");
-// 					document.querySelector("select[name=rightCnt]").append(option);
-// 	            }
-// 	            document.querySelector("select[name=rightCnt]").tmpRightCountVal;
-// 			} else if(pos == "L") {
-// 				var tmpleftCnt = document.querySelector("select[name=leftCnt]").value;
-// 				var tmpRightCnt = tmpTotalCnt - tmpleftCnt;
-// 	            document.querySelector("select[name=rightCnt]").val(tmpRightCnt);
-// 			} else if(pos == "R") {
-// 				var tmpRightCnt = document.querySelector("select[name=rightCnt]").value;
-// 				var tmpleftCnt = tmpTotalCnt - tmpRightCnt;
-// 	            document.querySelector("select[name=leftCnt]").tmpleftCnt.value;
-//             }
-//         },
-//     jaliSetting: function() {
-//         var leftX   = 100; // ���� X ��ǥ
-// 			var rightX  = 435; // ���� X ��ǥ
-// 			var topY    = 180; // ���� Y ��ǥ (�ֻ��)
-// 			var bottomY = 711; // ���� Y ��ǥ (���ϴ�)
-
-// 			var distanceY = bottomY - topY;
-// 			var oneStepY = 0;
-// 			var tmpArr;
-// 			var completeArr;
-
-// 			var inputTotalCnt = parseInt(document.querySelector("select[name=totalCnt]").value);
-// 			var inputLeftCnt = parseInt(document.querySelector("select[name=leftCnt]").value);
-// 			var inputRightCnt = parseInt(document.querySelector("select[name=rightCnt]").value);
-// 			var inputPrimaryOrder = document.querySelector(':radio[name="primaryOrder"]:checked').value;
-// 			// console.log("inputTotalCnt[" + inputTotalCnt + "] inputLeftCnt[" + inputLeftCnt + "] inputRightCnt[" + inputRightCnt + "] inputPrimaryOrder[" + inputPrimaryOrder + "]");
-
-// 			if(inputLeftCnt > 0 || inputRightCnt > 0) {
-// 				// tmpArr�� Y ��ǥ ����
-// 				if(inputLeftCnt >= inputRightCnt) {
-// 					oneStepY = distanceY / (inputLeftCnt - 1);
-// 					tmpArr = new Array(inputLeftCnt);
-// 					for(var i = 0; i < inputLeftCnt; i++) {
-// 						tmpArr[i] = parseInt(topY + (i * oneStepY));
-// 					}
-// 				} else {
-// 					oneStepY = distanceY / (inputRightCnt - 1);
-// 					tmpArr = new Array(inputRightCnt);
-// 					for(var i = 0; i < inputRightCnt; i++) {
-// 						tmpArr[i] = parseInt(topY + (i * oneStepY));
-// 					}
-// 				}
-
-// 				// completeArr ����
-// 				completeArr = new Array(inputTotalCnt);
-// 				if(inputLeftCnt >= inputRightCnt) {
-// 					console.clear();
-// 					console.log("===== ������������ Y ��ǥ ���� �� �ڸ� ä��� ���ð��� ���� ���� ��ġ =====");
-
-// 					for(var i = 0; i < inputLeftCnt; i++) {
-// 						completeArr[i] = leftX + "," + tmpArr[i];
-// 					}
-// 					for(var i = 0; i < inputRightCnt; i++) {
-// 						if(inputPrimaryOrder == 1) {
-// 							completeArr[inputLeftCnt+i] = rightX + "," + tmpArr[i];
-// 						} else {
-// 							completeArr[inputLeftCnt+i] = rightX + "," + tmpArr[inputLeftCnt-inputRightCnt+i];
-// 						}
-// 					}
-// 				} else {
-// 					console.clear();
-// 					console.log("===== ������������ Y ��ǥ ���� �� �ڸ� ä��� ���ð��� ���� ���� ��ġ =====");
-
-// 					for(var i = 0; i < inputLeftCnt; i++) {
-// 						if(inputPrimaryOrder == 1) {
-// 							completeArr[i] = leftX + "," + tmpArr[i];
-// 						} else {
-// 							completeArr[i] = leftX + "," + tmpArr[inputRightCnt-inputLeftCnt+i];
-// 						}
-// 					}
-// 					for(var i = 0; i < inputRightCnt; i++) {
-// 						completeArr[inputLeftCnt+i] = rightX + "," + tmpArr[i];
-// 					}
-// 				}
-
-// 				// Test log
-// 				console.log("* �ڸ� ��ȣ�� ���� �������� ����, �̾ ���� �������� ������ ������ �Ű����ϴ�.");
-// 				for(var i = 0; i < inputTotalCnt; i++) {
-// 					console.log((i+1) + "�� �ڸ� Image ��ǥ [" + completeArr[i] + "]");
-// 				}
-
-// 				// Display
-// 				for(var i = 0; i < inputTotalCnt; i++) {
-// 					var xyPosition = completeArr[i].split(",");
-// 					document.querySelector("#img" + (i+1)).css("left", parseInt(xyPosition[0]));
-// 					document.querySelector("#img" + (i+1)).css("top", parseInt(xyPosition[1]));
-// 					document.querySelector("#img" + (i+1)).show();
-// 				}
-// 			}
-// 			alert("Partner�� �̷��� ����� �ͱ��� �մϴ�.\n���߿� �ڸ� �����Ϸ� ���� User���� �� ��� �״�� �������ϴ�.");
-
-//     }
-//   }
-// })
-
 </script>
+
+
+        // SelectRightCnt : function() { //우현정원 재선택시 좌현 구하기  
+        //     this.SelectLeftCnt = '';
+        //     this.SelectLeftCnts = [];
+
+        //     var totalCntNum2 = this.totalCnt; //총 정원
+        //     var cnt2 = parseInt(this.SelectRightCnt); //우현 인원 
+        //     var result2 = parseInt(totalCntNum2 - cnt) + 1 ; //총 정원 -우현
+            
+           
+        //     if ( cnt2 > 0 ){
+        //         this.SelectLeftCnts = Array.from({length:result2}, (v, i) => i).slice(1);//좌현인원 총 인원값                
+        //         //우현값 선택시 좌현값 고정                
+        //          this.SelectLeftCnt = result2-1;            
+        //     }else if (cnt2 == totalCntNum2){ //우현 = 총인원 => 좌현 = 0
+        //         this.SelectLeftCnts = [0];
+        //     }
+
+        // }     
