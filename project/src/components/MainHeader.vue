@@ -1,19 +1,20 @@
 <template>
     <header id="header">
         <div class="user-header">
-            <div class="m-header">
+            <!-- .mobileMenu 햄버거 메뉴 -->
+            <div class="mobileMenu">
                 <span></span>
                 <span></span>
                 <span></span>      
             </div>
-            <h1><img src="../assets/images/logo.png" alt="MYJALI.com"></h1>
+            <h1><img src="../assets/images/logo.png" alt="MYJALI.com"></h1>            
             <ul class="gnb">
                 <li><router-link to="/SignIn">로그인</router-link></li>
-                <li>이용안내</li>
+                <li><router-link to="/">이용안내</router-link></li>
                 <li><router-link to="/SignUpInfo">파트너 가입</router-link></li>
             </ul>
         </div>
-    </header>    
+    </header>  
 </template>
 
 <script>

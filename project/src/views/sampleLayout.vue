@@ -12,6 +12,9 @@
             </ul>
            <p style="margin-top:10px">2.font-style</p>
             <p style="font-size:20px; color:#000; font-weight:bold"> [h2] title - font-size:20px, color:#000 </p>
+            <p style="font-size:20px; color:#333;"> 기본 #333</p>
+            <p style="font-size:20px; color:#3c6bef;"> #3c6bef</p>
+            <p style="font-size:20px; color:#e53935;"> #e53935</p>
         </div>
 
         <h1 style="margin:20px 0">LAYOUT</h1>
@@ -88,8 +91,17 @@
                     <input type="text" name="" id="" placeholder="주말 새벽 광어 낚시!!!">
                     <label for="">예약 이름 </label>
                 </div>
+                
             </div> 
-            1-1. 에러 메시지(input에 error 클래스 추가)
+            2. full-block form(라벨 제목 있음)
+            <div class="form-wrap">
+                <div class="form-large">
+                    <label for="">예약 이름 </label>
+                    <input type="text" name="" id="" placeholder="주말 새벽 광어 낚시!!!">
+                </div>
+            </div> 
+
+            3. 에러 메시지(input에 error 클래스 추가)
             <div class="form-wrap">
                  <!-- 유효성검사 실패시 error 클래스 추가 -->
                 <div class="form-large">
@@ -98,7 +110,7 @@
                     <div class="error-msg" id="error-msg">error massage</div>
                 </div>
             </div>
-            1-2. 다중 에러 메시지
+            3-1. 다중 에러 메시지
             <div class="form-wrap">
                 <p class="title">계좌정보 등록 (계좌번호)</p>
                 <div class="account-form">
@@ -110,20 +122,14 @@
                 </div>
                 <div class="error-msg" id="error-msg">error massage</div>
                 <div class="form-large">
-                    <input type="text" class="error" name="" id="" placeholder="계좌번호(- 제외)">
+                    <input type="text" class="" name="" id="" placeholder="계좌번호(- 제외)">
                     <label for="">계좌번호(- 제외)</label>
                     <div class="error-msg" id="error-msg">error massage</div>
                 </div>
             </div>
-            2. full-block form(라벨 제목 있음)
-            <div class="form-wrap">
-                <div class="form-large">
-                    <label for="">예약 이름 </label>
-                    <input type="text" name="" id="" placeholder="주말 새벽 광어 낚시!!!">
-                </div>
-            </div> 
-
-            3. 텍스트 추가
+            
+          
+            4. 라디오 버튼
             <p>- radio-form / 2개</p>
             <div class="form-wrap">
                 <p class="title">부가 상품 사용 (사이트에 표시 여부)</p>
@@ -158,6 +164,31 @@
                     </div>
                 </div>
             </div>
+            - radio-form / 4개
+            <div class="form-wrap four-chk">
+                <p class="title">출조 위치</p>
+                <!-- radio 4개 -->
+                <div class="four-radio">
+                    <div class="radio-form">
+                        <input type="radio" id="" name="">
+                        <label for="">서해</label>
+                    </div>
+                    <div class="radio-form">
+                        <input type="radio" id="" name="">
+                        <label for="">동해</label>
+                    </div>
+                    <div class="radio-form">
+                        <input type="radio" id="" name="">
+                        <label for="">남해</label>
+                    </div>
+                    <div class="radio-form">
+                        <input type="radio" id="" name="">
+                        <label for="">제주도</label>
+                    </div>
+                </div>
+            </div>
+
+            5.셀렉트 박스 - date-list
             <div class="form-wrap date-wrap">
                 <p class="title">예약 기간 설정</p>
                 <div class="date-list">
@@ -178,7 +209,29 @@
                         </select>
                     </div>
                 </div>
+                
             </div>
+            
+            6.계좌정보
+            <div class="form-wrap">
+                <p class="title">계좌정보 등록 (계좌번호)</p>
+                <div class="account-form">
+                    <div class="select-form">
+                        <select name="" id="">
+                            <option value="은행">은행</option>
+                        </select>
+                    </div>
+                    <input type="text" name="" id="" placeholder="예금주 명">
+                    <label for="">예금주 명</label>
+                </div>
+                <div class="form-large">
+                    <input type="text" name="" id="" placeholder="계좌번호(- 제외)">
+                    <label for="">계좌번호(- 제외)</label>
+                </div>
+                <p class="info-text info-text-row">- 입금 받을 정확한 정보를 입력 하세요. (은행 / 예금주 / 계좌번호)</p>
+                <p class="info-text">- 잘못된 정보 등록시 민.형사상 피해가 발생할 수 있으며, 책임지지 않습니다.</p>                            
+            </div>
+
         </div><!-- //form-area -->
 
 

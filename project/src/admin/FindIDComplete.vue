@@ -7,7 +7,7 @@
 
                 <h2>아이디 찾기</h2>
                 <p class="sub-text">아이디(Email) 찾기가 완료 되었습니다.</p>
-                <div class="table-wrap">
+                <div class="table-wrap  mobile-table">
                      <table class="table-style2">
                         <caption>아이디 찾기</caption>
                         <colgroup>

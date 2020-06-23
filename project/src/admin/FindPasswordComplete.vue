@@ -7,7 +7,7 @@
 
                 <h2>비밀번호 재설정</h2>
                 <p class="sub-text">비밀번호 재설정이 완료 되었습니다.</p>
-                <div class="table-wrap">
+                <div class="table-wrap  mobile-table">
                      <table class="table-style2">
                         <caption>비밀번호 재설정</caption>
                         <colgroup>

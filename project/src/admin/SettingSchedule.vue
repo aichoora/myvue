@@ -180,7 +180,7 @@
                             <div class="setting-wrap">
                                 <div class="top-container">
                                     <div class="left-wrap">
-                                            <p>좌현 인원</p>
+                                        <p>좌현 인원</p>
                                         <div class="select-form select-wrap">
                                             <label for="SelectLeftCnt">좌현 인원</label>
                                             <select name="SelectLeftCnt" id="SelectLeftCnt" v-model="SelectLeftCnt" >
@@ -191,8 +191,10 @@
                                          <div class="switch-wrap">
                                             <span>선수 순</span>
                                             <div class="switch-box">
-                                                <input type="checkbox" name="" id="chk1" class="swich-input">
-                                                <label for="chk1"></label>
+                                                <input type="checkbox" class="swich-input" id="switchCheck" 
+                                                v-model="switchCheck"
+                                                @change="switchChk('cheked', $event)"> 
+                                                <label for="switchCheck"></label>
                                             </div>
                                             <span>선미 순</span>
                                         </div>                           
@@ -217,48 +219,48 @@
                                     <span class="right">우현</span>
                                     <span class="bottom">선미</span>
                                     <div class="leftJali">
-                                        <div id="jaliLeft1" class="myjali"><span>1</span></div>
-                                        <div id="jaliLeft2" class="myjali"><span>2</span></div>
-                                        <div id="jaliLeft3" class="myjali"><span>3</span></div>
-                                        <div id="jaliLeft4" class="myjali"><span>4</span></div>
-                                        <div id="jaliLeft5" class="myjali"><span>5</span></div>
-                                        <div id="jaliLeft6" class="myjali"><span>6</span></div>
-                                        <div id="jaliLeft7" class="myjali"><span>7</span></div>
-                                        <div id="jaliLeft8" class="myjali"><span>8</span></div>
-                                        <div id="jaliLeft9" class="myjali"><span>9</span></div>
-                                        <div id="jaliLeft10" class="myjali"><span>10</span></div>
-                                        <div id="jaliLeft11" class="myjali"><span>11</span></div>
-                                        <div id="jaliLeft12" class="myjali"><span>12</span></div>
-                                        <div id="jaliLeft13" class="myjali"><span>13</span></div>
-                                        <div id="jaliLeft14" class="myjali"><span>14</span></div>
-                                        <div id="jaliLeft15" class="myjali"><span>15</span></div>
-                                        <div id="jaliLeft16" class="myjali"><span>16</span></div>
-                                        <div id="jaliLeft17" class="myjali"><span>17</span></div>
-                                        <div id="jaliLeft18" class="myjali"><span>18</span></div>
-                                        <div id="jaliLeft19" class="myjali"><span>19</span></div>
-                                        <div id="jaliLeft20" class="myjali"><span>20</span></div>
+                                        <div id="jaliLeft1" class="myjali">1 </div>
+                                        <div id="jaliLeft2" class="myjali"> 2</div>
+                                        <div id="jaliLeft3" class="myjali"> 3</div>
+                                        <div id="jaliLeft4" class="myjali"> 4</div>
+                                        <div id="jaliLeft5" class="myjali"> 5</div>
+                                        <div id="jaliLeft6" class="myjali"> 6</div>
+                                        <div id="jaliLeft7" class="myjali"> 7</div>
+                                        <div id="jaliLeft8" class="myjali"> 8</div>
+                                        <div id="jaliLeft9" class="myjali"> 9</div>
+                                        <div id="jaliLeft10" class="myjali">10 </div>
+                                        <div id="jaliLeft11" class="myjali">11 </div>
+                                        <div id="jaliLeft12" class="myjali">12 </div>
+                                        <div id="jaliLeft13" class="myjali">13 </div>
+                                        <div id="jaliLeft14" class="myjali">14 </div>
+                                        <div id="jaliLeft15" class="myjali">15 </div>
+                                        <div id="jaliLeft16" class="myjali">16 </div>
+                                        <div id="jaliLeft17" class="myjali">17 </div>
+                                        <div id="jaliLeft18" class="myjali"> 18</div>
+                                        <div id="jaliLeft19" class="myjali"> 19</div>
+                                        <div id="jaliLeft20" class="myjali"> 20</div>
                                     </div>
                                     <div class="rightJali">
-                                        <div id="jaliRight1" class="myjali"><span>{{ numValue }}</span></div>
-                                        <div id="jaliRight2" class="myjali"><span>{{ numValue }}</span></div>
-                                        <div id="jaliRight3" class="myjali"><span>{{ numValue }}</span></div>
-                                        <div id="jaliRight4" class="myjali"><span>{{ numValue }}</span></div>
-                                        <div id="jaliRight5" class="myjali"><span>{{ numValue }}</span></div>
-                                        <div id="jaliRight6" class="myjali"><span>{{ numValue }}</span></div>
-                                        <div id="jaliRight7" class="myjali"><span>{{ numValue }}</span></div>
-                                        <div id="jaliRight8" class="myjali"><span>{{ numValue }}</span></div>
-                                        <div id="jaliRight9" class="myjali"><span>{{ numValue }}</span></div>
-                                        <div id="jaliRight10" class="myjali"><span>{{ numValue }}</span></div>
-                                        <div id="jaliRight11" class="myjali"><span>{{ numValue }}</span></div>
-                                        <div id="jaliRight12" class="myjali"><span>{{ numValue }}</span></div>
-                                        <div id="jaliRight13" class="myjali"><span>{{ numValue }}</span></div>
-                                        <div id="jaliRight14" class="myjali"><span>{{ numValue }}</span></div>
-                                        <div id="jaliRight15" class="myjali"><span>{{ numValue }}</span></div>
-                                        <div id="jaliRight16" class="myjali"><span>{{ numValue }}</span></div>
-                                        <div id="jaliRight17" class="myjali"><span>{{ numValue }}</span></div>
-                                        <div id="jaliRight18" class="myjali"><span>{{ numValue }}</span></div>
-                                        <div id="jaliRight19" class="myjali"><span>{{ numValue }}</span></div>
-                                        <div id="jaliRight20" class="myjali"><span>{{ numValue }}</span></div>
+                                        <div id="jaliRight1" class="myjali">{{ numValue }}</div>
+                                        <div id="jaliRight2" class="myjali">{{ numValue }}</div>
+                                        <div id="jaliRight3" class="myjali">{{ numValue }}</div>
+                                        <div id="jaliRight4" class="myjali">{{ numValue }}</div>
+                                        <div id="jaliRight5" class="myjali">{{ numValue }}</div>
+                                        <div id="jaliRight6" class="myjali">{{ numValue }}</div>
+                                        <div id="jaliRight7" class="myjali">{{ numValue }}</div>
+                                        <div id="jaliRight8" class="myjali">{{ numValue }}</div>
+                                        <div id="jaliRight9" class="myjali">{{ numValue }}</div>
+                                        <div id="jaliRight10" class="myjali">{{ numValue }}</div>
+                                        <div id="jaliRight11" class="myjali">{{ numValue }}</div>
+                                        <div id="jaliRight12" class="myjali">{{ numValue }}</div>
+                                        <div id="jaliRight13" class="myjali">{{ numValue }}</div>
+                                        <div id="jaliRight14" class="myjali">{{ numValue }}</div>
+                                        <div id="jaliRight15" class="myjali">{{ numValue }}</div>
+                                        <div id="jaliRight16" class="myjali">{{ numValue }}</div>
+                                        <div id="jaliRight17" class="myjali">{{ numValue }}</div>
+                                        <div id="jaliRight18" class="myjali">{{ numValue }}</div>
+                                        <div id="jaliRight19" class="myjali">{{ numValue }}</div>
+                                        <div id="jaliRight20" class="myjali">{{ numValue }}</div>
                                     </div>
                                 </div>
                                 <div class="bottom-container">
@@ -295,7 +297,8 @@ export default {
             SelectLeftCnts:[], 
             SelectRightCnt : '',
             SelectRightCnts : [],
-            numValue : 0
+            numValue : '',
+            switchCheck: []
         }
     },
     watch: {
@@ -324,60 +327,75 @@ export default {
             } else if (cnt == totalCntNum){ //좌현 = 총인원 => 우현 = 0
                 this.SelectRightCnts = [0];
             }             
-        }       
+        }     
     },
     methods: {
-        onChange() {
-
+        onChange() {//우현선택시 좌현 자동값지정
             var totalCntNum2 = this.totalCnt; //총 정원
-            var cnt2 = parseInt(this.SelectRightCnt); //우우현 인원 
+            var cnt2 = parseInt(this.SelectRightCnt); //우현 인원 
             var result2 = parseInt(totalCntNum2 - cnt2) + 1 ; //총 정원 - 우현
             if ( cnt2 > 0 ){
                 this.SelectLeftCnts = Array.from({length:result2}, (v, i) => i).slice(1);//좌현인원 총 인원값                
                 this.SelectLeftCnt = result2-1;     
             }
         },
-       jaliSetting () {
+        switchChk(value, $event) { //선수순, 선미순 체크
+            var checked = $event.target.checked;
+            //console.log(checked);
+
+            var leftJali = document.querySelector(".leftJali");
+            var rightJali = document.querySelector(".rightJali");
+            leftJali.classList.remove("reverse");
+            rightJali.classList.remove("reverse");
+            
+            if( checked == true ) {              
+                leftJali.classList.add("reverse");
+                rightJali.classList.add("reverse");
+            }
+        }, 
+        jaliSetting () {
             
             var totalCnt = this.totalCnt; //총 정원
             var SelectLeftCnt = this.SelectLeftCnt; //좌현 정원 jaliLeft
             var SelectRightCnt = this.SelectRightCnt; //우현 정원 jaliRight
-            for(var m = 0; m < 20; m++) { 
-                    // 자리 clear
-                    var int3 = document.querySelector("#jaliLeft" + (m+1));      
-                    var int4 = document.querySelector("#jaliRight" + (m+1));                    
-                    int3.style.display = "none";              
-                    int4.style.display = "none";
+
+            for(var m = 0; m < 20; m++) { // 자리 clear
+                    var initLeft = document.querySelector("#jaliLeft" + (m+1));      
+                    var initRight = document.querySelector("#jaliRight" + (m+1));                    
+                    initLeft.style.display = "none";              
+                    initRight.style.display = "none";
                     //console.log(m);
                 } 
             if( totalCnt == 0) {
                 alert("선박 정원을 모두 선택해주세요!");   
             }else {
                   
-                //좌현 인원
                 if( SelectLeftCnt > 0 ) {
+                    //좌현 인원 그리기
                     for(var i = 0; i < SelectLeftCnt; i++) { 
-                        var int = document.querySelector("#jaliLeft" + (i+1));                    
-                        int.style.display = "block";
+                        var leftNum = document.querySelector("#jaliLeft" + (i+1));                    
+                        leftNum.style.display = "block";
 
                     }    
-                    //우현 인원
-                    if( SelectRightCnt > 0 ) {
+                    //우현 인원 그리기
+                    if( SelectRightCnt
+                     > 0 ) {
                         for(var j= 0; j < SelectRightCnt; j++) { 
-                            var int2 = document.querySelector("#jaliRight" + (j+1));                    
-                            int2.style.display = "block";
+                            var rightNum = document.querySelector("#jaliRight" + (j+1));    
+                            rightNum.style.display = "block";                                  
                         }
-                        //span 숫자 채우기 // SelectLeftCnt                            
+                        
+                        //span 숫자 채우기 // SelectRightCnt쪽만 넣으면 됨      
                         var numValue2 = parseInt(totalCnt - SelectLeftCnt);// 우
-                        var SelectLeftCnt2 = parseInt(SelectLeftCnt)//좌          
-                        console.log('1.'+ numValue2, SelectLeftCnt2); // 우, 좌 
-
-                        for(var p=SelectLeftCnt2; p < totalCnt; p++ ) {           //우현정원 = p     2<4
-                            
-                            this.numValue = SelectLeftCnt2 +1;
-
+                        var SelectLeftCnt2 = parseInt(SelectLeftCnt)//좌 
+                    
+                        for(var p=SelectLeftCnt2; p < totalCnt; p++ ) {  
+                              
+                            this.numValue = p+1;
+                            console.log('1.'+ numValue2, SelectLeftCnt2); // 우, 좌 
                             console.log('2.'+ SelectLeftCnt2, totalCnt ); //총인원
-                        }
+                            console.log(p+1);
+                        }    
                     }      
                 }
             }            
@@ -387,22 +405,3 @@ export default {
 
 </script>
 
-
-        // SelectRightCnt : function() { //우현정원 재선택시 좌현 구하기  
-        //     this.SelectLeftCnt = '';
-        //     this.SelectLeftCnts = [];
-
-        //     var totalCntNum2 = this.totalCnt; //총 정원
-        //     var cnt2 = parseInt(this.SelectRightCnt); //우현 인원 
-        //     var result2 = parseInt(totalCntNum2 - cnt) + 1 ; //총 정원 -우현
-            
-           
-        //     if ( cnt2 > 0 ){
-        //         this.SelectLeftCnts = Array.from({length:result2}, (v, i) => i).slice(1);//좌현인원 총 인원값                
-        //         //우현값 선택시 좌현값 고정                
-        //          this.SelectLeftCnt = result2-1;            
-        //     }else if (cnt2 == totalCntNum2){ //우현 = 총인원 => 좌현 = 0
-        //         this.SelectLeftCnts = [0];
-        //     }
-
-        // }     

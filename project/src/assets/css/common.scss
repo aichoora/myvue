@@ -17,22 +17,24 @@ header {
 }
 
 #header {
-    overflow: hidden;
+    @include afterSet;
     position: relative;
     width: 100%;
     height: 90px;
     margin: 0 auto;
+    background: #fff;
+    z-index: 11;
     @media screen and(max-width: 900px) {
         height: 56px;
     }
     .user-header {
-        .m-header,
-        .m-header span {
+        .mobileMenu,
+        .mobileMenu span {
             display: inline-block;
             transition: all .4s;
             box-sizing: border-box;
         }
-        .m-header {
+        .mobileMenu {
             position: relative;
             width: 28px;
             height: 28px;
@@ -107,10 +109,10 @@ header {
                 }
             }
             .active span:nth-of-type(1) {
-                -webkit-animation: active-menu-bar07-01 .75s forwards;
-                animation: active-menu-bar07-01 .75s forwards;
+                -webkit-animation: active-menu-bar .75s forwards;
+                animation: active-menu-bar .75s forwards;
             }
-            @-webkit-keyframes active-menu-bar07-01 {
+            @-webkit-keyframes active-menu-bar {
                 0% {
                     -webkit-transform: translateY(0) rotate(0);
                 }
@@ -121,7 +123,7 @@ header {
                     -webkit-transform: translateY(20px) rotate(45deg);
                 }
             }
-            @keyframes active-menu-bar07-01 {
+            @keyframes active-menu-bar {
                 0% {
                     transform: translateY(0) rotate(0);
                 }
@@ -136,10 +138,10 @@ header {
                 opacity: 0;
             }
             .active span:nth-of-type(3) {
-                -webkit-animation: active-menu-bar07-02 .75s forwards;
-                animation: active-menu-bar07-02 .75s forwards;
+                -webkit-animation: active-menu-bar2 .75s forwards;
+                animation: active-menu-bar2 .75s forwards;
             }
-            @-webkit-keyframes active-menu-bar07-02 {
+            @-webkit-keyframes active-menu-bar2 {
                 0% {
                     -webkit-transform: translateY(0) rotate(0);
                 }
@@ -150,7 +152,7 @@ header {
                     -webkit-transform: translateY(-20px) rotate(-45deg);
                 }
             }
-            @keyframes active-menu-bar07-02 {
+            @keyframes active-menu-bar2 {
                 0% {
                     transform: translateY(0) rotate(0);
                 }
@@ -166,69 +168,125 @@ header {
             }
         }
         .gnb {
-            @media screen and(max-width: 900px) {
-                display: none;
-            }
             @include afterSet;
             position: absolute;
-            top:33px;
-            right:50px;
+            top: 33px;
+            right: 50px;
+            @media screen and(max-width: 900px) {
+                display: none;
+                position: absolute;
+                top: 58px;
+                right: 0;
+                background: #fff;
+                width: 100%;
+                height: 47vh;
+                z-index: 10;
+                padding: 2.5em 1.8em;
+                box-sizing: border-box;
+            }
             li {
                 float: left;
                 margin: 0 10px;
                 font-size: 16px;
                 color: #333;
-            }
-            li:nth-child(2) {
-                position: relative;
-                &:before {
-                    display: block;
-                    content: '';
-                    position: absolute;
-                    top: 4px;
-                    left: -11px;
-                    width: 1px;
-                    height: 16px;
-                    background: #333;
-                }
-                &:after {
-                    display: block;
-                    content: '';
-                    position: absolute;
-                    top: 4px;
-                    right: -10px;
-                    width: 1px;
-                    height: 16px;
-                    background: #333;
+                @media screen and(max-width: 900px) {
+                    overflow: hidden;
+                    float: inherit;
+                    width: 100%;
+                    margin: 0;
+                    font-size: 20px;
+                    color: #333;
+                    a {
+                        display: block;
+                        margin: 15px 0;
+                        font-size: 20px;
+                    }
                 }
             }
         }
-        h1 {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            margin-top: -30px;
-            margin-left: 80px;
-            height: 90px;
-            width: 180px;
-            -o-box-sizing: border-box;
-            -ms-box-sizing: border-box;
-            box-sizing: border-box;
-            @media screen and(max-width: 900px) {
+        li:nth-child(2) {
+            position: relative;
+            &:before {
+                display: block;
+                content: '';
                 position: absolute;
-                top: 0;
-                left: 50%;
-                margin: 0 auto;
-                width: 182px;
-                height: 56px;
-                transform: translateX(-50%)
+                top: 4px;
+                left: -11px;
+                width: 1px;
+                height: 16px;
+                background: #333;
+                @media screen and(max-width: 900px) {
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 1px;
+                    background: #dbdbdb;
+                }
             }
+            &:after {
+                display: block;
+                content: '';
+                position: absolute;
+                top: 4px;
+                right: -10px;
+                width: 1px;
+                height: 16px;
+                background: #333;
+                @media screen and(max-width: 900px) {
+                    top: 57px;
+                    left: 0;
+                    width: 100%;
+                    height: 1px;
+                    background: #dbdbdb;
+                }
+            }
+        }
+    }
+    h1 {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        margin-top: -30px;
+        margin-left: 80px;
+        height: 90px;
+        width: 180px;
+        -o-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        box-sizing: border-box;
+        @media screen and(max-width: 900px) {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            margin: 0 auto;
+            width: 182px;
+            height: 56px;
+            transform: translateX(-50%)
         }
     }
 }
 
+
+/* 모달 배경 */
+
+.show-modal {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    visibility: visible;
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.65);
+    transition: visibility 0s liner 0s, opacity 0.25s 0s, transform 0.25s;
+    transform: scale(1.0);
+    z-index: 10;
+}
+
 //footer
 footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
     width: 100%;
     margin: 0 auto;
     font-size: 14px;
@@ -436,6 +494,7 @@ h1 {
     width: 100%;
     margin: 0 auto;
     height: 100%;
+    min-height: 90vh;
     padding-top: 40px;
     background-color: #efefef;
     @media screen and(max-width: 1139px) {
@@ -447,7 +506,8 @@ h1 {
 }
 
 #center-wrap {
-    width: 100%
+    width: 100%;
+    max-width: 100%;
 }
 
 
@@ -963,7 +1023,7 @@ h1 {
                 padding: 4px 0;
                 height: 25px;
                 margin: 0 auto;
-                margin-top: 10px;
+                margin-top: 7px;
                 background: #758298;
                 color: #fff;
                 text-align: center;
@@ -1128,6 +1188,7 @@ h1 {
         .leftJali {
             -webkit-display: flex;
             display: flex;
+            -webkit-flex-direction: column;
             flex-direction: column;
             float: left;
             width: 22px;
@@ -1137,6 +1198,7 @@ h1 {
         .rightJali {
             -webkit-display: flex;
             display: flex;
+            -webkit-flex-direction: column;
             flex-direction: column;
             float: right;
             width: 22px;
@@ -1144,9 +1206,11 @@ h1 {
             text-align: center;
         }
         .reverse {
-            flex-direction: column-reverse;
+            -webkit-justify-content: flex-end;
+            justify-content: flex-end;
+            -webkit-align-items: center;
+            align-items: center
         }
-        input[type="checkbox"],
         .myjali {
             display: none;
             @include boxSizing;
@@ -1158,35 +1222,24 @@ h1 {
             background-color: #efefef;
             cursor: pointer;
         }
-        input[type="checkbox"]+label {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            width: 22px;
-            height: 22px;
-            margin-left: -11px;
-            line-height: 22px;
-            text-align: center;
-            font-size: 11px;
-            color: #333;
-        }
-        input[type="checkbox"]:checked {
+        .myjali.checked {
             background-color: #2454d9;
             border: 1px solid #2254d9;
-        }
-        input[type="checkbox"]:checked+label {
             color: #fff;
         }
-        input.button_occupied {
+        .myjali.occupied {
+            position: relative;
             background-color: #b8c2d3;
             border: 1px solid #b8c2d3;
+            font-size: 0;
+            cursor: none;
         }
-        .button_occupied:before {
+        .myjali.occupied:before {
             display: block;
             content: '';
             position: absolute;
-            top: 4px;
-            left: 11px;
+            top: 2px;
+            left: 9px;
             width: 1px;
             height: 16px;
             background-color: #fff;
@@ -1194,12 +1247,12 @@ h1 {
             -moz-transform: rotate(45deg);
             transform: rotate(45deg);
         }
-        .button_occupied:after {
+        .myjali.occupied:after {
             display: block;
             content: '';
             position: absolute;
-            top: 4px;
-            right: 10px;
+            top: 2px;
+            right: 9px;
             width: 1px;
             height: 16px;
             background-color: #fff;
@@ -1207,14 +1260,11 @@ h1 {
             -moz-transform: rotate(-45deg);
             transform: rotate(-45deg);
         }
-        input.button_occupied+label {
-            font-size: 0;
-            cursor: none;
-        }
-        input.button-not {
+        .myjali.notChoose {
             color: #333;
             background-color: #666;
-            cursor: none;
+            cursor: not-allowed;
+            font-size: 0;
         }
     }
     .bottom-container {
@@ -1300,6 +1350,22 @@ h1 {
 .table-wrap {
     overflow-x: auto;
     white-space: nowrap;
+}
+
+.table-wrap.mobile-table {
+    overflow: hidden;
+    .table-style2 {
+        width: 100%;
+        @media screen and(max-width: $break-mobile) {
+            td, th {
+                display: block;
+                width: 100%
+            }
+            td {
+                border-bottom: 0;
+            }
+        }
+    }
 }
 
 .table-style1 {

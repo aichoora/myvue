@@ -95,11 +95,23 @@ input[type="text"],
 input[type="password"] {
     @include boxSizing;
     padding: 10px 12px;
-    color: #999;
+    color: #333333;
     border-radius: 4px;
     border: solid 1px #b9b9b9;
     font-size: 14px;
     margin-bottom: 8px;
+}
+
+input::-webkit-input-placeholder,
+input:-ms-input-placeholder,
+input:-mos-input-placeholder {
+    color: #999;
+}
+
+input.error::-webkit-input-placeholder,
+input.error:-ms-input-placeholder,
+input.error:-mos-input-placeholder {
+    color: #e53935;
 }
 
 .login-form {
@@ -260,6 +272,7 @@ select:focus,
 textarea:focus,
 .select-form:focus {
     border-color: #3c6def;
+    color: #666
 }
 
 
@@ -456,7 +469,7 @@ input.error {
     border-color: #e53935;
     color: #e53935;
     &:focus {
-        color: #3c6def
+        color: #666
     }
 }
 
