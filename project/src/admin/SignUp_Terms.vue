@@ -29,7 +29,7 @@
                 <form action="">
                     <fieldset>  
                         <div class="form-wrap">
-                            <input type="radio" name="" id="terms1">
+                            <input type="checkbox" name="" id="terms1">
                             <label for="terms1">동의 합니다.</label>
                         </div>
                     </fieldset>
@@ -48,7 +48,7 @@
                 <form action="">
                     <fieldset>  
                         <div class="form-wrap">
-                            <input type="radio" name="" id="terms2">
+                            <input type="checkbox" name="" id="terms2">
                             <label for="terms2">동의 합니다.</label>
                         </div>                       
                         <div class="button-wrap last-button-wrap">

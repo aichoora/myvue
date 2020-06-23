@@ -40,7 +40,7 @@
                     <td>./admin/SignUp_terms.vue</td>
                     <td>SignUp_Terms_01</td>
                     <td>파트너 약관 동의</td>
-                    <td>0618/퍼블리싱끝</td>
+                    <td>0618/퍼블리싱끝 + 23일 checkbox 로 변경</td>
                 </tr>
                 <tr>
                     <td><router-link to="/SignUpComplete" target="_blank">SignUp Complete</router-link></td>
@@ -118,7 +118,7 @@
                     <td></td>
                     <td>SettingSite</td>
                     <td>./admin/SettingSite.vue</td>
-                    <td></td>
+                    <td>Setting_site_01</td>
                     <td>사이트 설정</td>
                     <td>0618/퍼블리싱끝</td>
                 </tr>
@@ -127,7 +127,7 @@
                     <td></td>
                     <td>SettingProduct</td>
                     <td>./admin/SettingProduct.vue</td>
-                    <td></td>
+                    <td>Setting_product_01</td>
                     <td>상품 설정</td>
                     <td>0618/퍼블리싱끝</td>
                 </tr>
@@ -136,8 +136,8 @@
                     <td></td>
                     <td>SettingSchedule</td>
                     <td>./admin/SettingSchedule.vue</td>
-                    <td></td>
-                    <td>예약 등록</td>
+                    <td>Setting_schedule_01</td>
+                    <td>예약 등록(스케줄)</td>
                     <td>0618/퍼블리싱끝</td>
                 </tr>
                 <tr>
@@ -145,7 +145,7 @@
                     <td></td>
                     <td>SettingScheduleList</td>
                     <td>./admin/SettingScheduleList.vue</td>
-                    <td></td>
+                    <td>Setting_schedule_list_01</td>
                     <td>예약 리스트</td>
                     <td>0618/퍼블리싱끝</td>
                 </tr>
@@ -154,7 +154,7 @@
                     <td></td>
                     <td>SettingMenu</td>
                     <td>./admin/SettingMenu.vue</td>
-                    <td></td>
+                    <td>Setting_menu_01</td>
                     <td>메뉴 설정</td>
                     <td>0618/퍼블리싱끝</td>
                 </tr>
@@ -163,7 +163,7 @@
                     <td></td>
                     <td>SettingSchduleComplete</td>
                     <td>./admin/SettingSchduleComplete.vue</td>
-                    <td></td>
+                    <td>Setting_schedule_complete_01</td>
                     <td>예약 설정 완료</td>
                     <td>0618/퍼블리싱끝</td>
                 </tr>
@@ -172,7 +172,7 @@
                     <td></td>
                     <td>SettingSchduleComplete2</td>
                     <td>./admin/SettingSchduleComplete2.vue</td>
-                    <td></td>
+                    <td>Setting_schedule_modify_complete_01</td>
                     <td>예약 수정 완료</td>
                     <td>0618/퍼블리싱끝</td>
                 </tr>
@@ -181,7 +181,7 @@
                     <td></td>
                     <td>SettingScheduleModify</td>
                     <td>./admin/SettingScheduleModify.vue</td>
-                    <td></td>
+                    <td>Setting_schedule_modify_01</td>
                     <td>예약 수정 </td>
                     <td>0618/퍼블리싱끝</td>
                 </tr>
@@ -190,7 +190,7 @@
                     <td></td>
                     <td>SettingScheduleModify2</td>
                     <td>./admin/SettingScheduleModify2.vue</td>
-                    <td></td>
+                    <td>Setting_schedule_list_02</td>
                     <td>예약 수정(스케쥴없음)</td>
                     <td>0618/퍼블리싱끝</td>
                 </tr>
@@ -199,7 +199,7 @@
                     <td></td>
                     <td>SettingSchduleDelete</td>
                     <td>./admin/SettingSchduleDelete.vue</td>
-                    <td></td>
+                    <td>Setting_schedule_list_delete_01</td>
                     <td>예약 삭제</td>
                     <td>0618/퍼블리싱끝</td>
                 </tr>
@@ -208,7 +208,7 @@
                     <td></td>
                     <td>SettingSchduleDeleteComplete</td>
                     <td>./admin/SettingSchduleDeleteComplete.vue</td>
-                    <td></td>
+                    <td>Setting_schedule_list_delete_02</td>
                     <td>예약 삭제 완료</td>
                     <td>0618/퍼블리싱끝</td>
                 </tr>

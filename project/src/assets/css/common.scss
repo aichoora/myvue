@@ -972,6 +972,7 @@ h1 {
         .left-wrap {
             float: left;
             width: 50%;
+            height: 102px;
             padding: 14px 50px;
             background-color: #e7edf5;
             @include boxSizing;
@@ -987,6 +988,7 @@ h1 {
         .right-wrap {
             float: left;
             width: 50%;
+            height: 102px;
             padding: 14px 50px;
             background-color: #e7edf5;
             @include boxSizing;
@@ -1023,7 +1025,7 @@ h1 {
                 padding: 4px 0;
                 height: 25px;
                 margin: 0 auto;
-                margin-top: 7px;
+                margin-top: 13px;
                 background: #758298;
                 color: #fff;
                 text-align: center;

@@ -1,7 +1,13 @@
 <template>
     <div class="wrapper">
-        <h1 style="margin-bottom:20px">DESIGN</h1>
-        <div>
+        <ul class="goMenu">
+            <li><a href="#settingColor">컬러 모음 ▶</a></li>
+            <li><a href="#settingLayout">레이아웃 모음 ▶</a></li>
+            <li><a href="#settingForm">폼 모음 ▶</a></li>
+            <li><a href="#settingShip">선박설정 클래스명 ▶</a></li>
+        </ul>
+        <h1 style="margin:20px 0">DESIGN</h1>
+        <div id="settingColor">
             1.color
             <ul>
                 <li>버튼 기본 컬러 - #133db1 <div class="box" style="background-color:#133db1"></div></li>
@@ -18,7 +24,7 @@
         </div>
 
         <h1 style="margin:20px 0">LAYOUT</h1>
-        <div class="layout_wrap">            
+        <div id="settingLayout" class="layout_wrap">            
             <div class="layout">
                <span class="txt">Main-Layout - #app</span>
                <div class="header">               
@@ -83,7 +89,7 @@
         </div>
 
         <h1 style="margin:20px 0">FORM</h1>
-        <div class="form-area" style="width:800px">
+        <div id="settingForm" class="form-area" style="width:800px">
             
             1. full-block form(라벨없음)
             <div class="form-wrap">
@@ -91,7 +97,7 @@
                     <input type="text" name="" id="" placeholder="주말 새벽 광어 낚시!!!">
                     <label for="">예약 이름 </label>
                 </div>
-                
+
             </div> 
             2. full-block form(라벨 제목 있음)
             <div class="form-wrap">
@@ -232,9 +238,33 @@
                 <p class="info-text">- 잘못된 정보 등록시 민.형사상 피해가 발생할 수 있으며, 책임지지 않습니다.</p>                            
             </div>
 
+            7. 체크박스
+              <div class="form-wrap">
+                            <input type="checkbox" name="" id="terms1">
+                            <label for="terms1">동의 합니다.</label>
+                        </div>
         </div><!-- //form-area -->
 
 
+        <h1 style="margin-top:20px 0">선박 설정</h1>
+        <div id="settingShip" class="setting-wrap" style="width:50%;padding:50px;height:100%;">
+            <div class="middle-container" style="background:none; border:1px solid #666">
+                <p>div class 설정</p>
+                <p>기본 myjali 클래스에 상태 클래스만 추가해주시면 됩니다.(다른화면에서 독립적으로 사용할땐 부모클래스 필요합니다...)</p>
+<br>
+<pre>
+&lt;div id="jaliLeft1" class="myjali"&gt;1&lt;/div&gt;
+&lt;div id="jaliLeft2" class="myjali checked"&gt;2&lt;/div&gt;
+&lt;div id="jaliLeft3" class="myjali occupied"&gt;3&lt;/div&gt;
+&lt;div id="jaliLeft4" class="myjali notChoose"&gt;4&lt;/div&gt;
+
+일반 - myjali <div class="myjali">1</div>
+선택 - myjali checked <div class="myjali checked">2</div>
+예약완료 - myjali occupied <div class="myjali occupied">3</div>
+선택불가 - myjali notChoose <div class="myjali notChoose">4</div>
+</pre>
+            </div>
+        </div>
 
 
     </div><!-- //wrapper -->
@@ -295,5 +325,6 @@ export default {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
  }
-
+ .setting-wrap .middle-container .myjali {display:block;text-align:center}
+.goMenu{font-weight:bold; color:#333;}
 </style>
