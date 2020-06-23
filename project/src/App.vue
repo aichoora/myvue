@@ -4,7 +4,7 @@
     <router-view name="content"></router-view>
     <router-view name="footer"></router-view>
     <!-- modal 배경-->
-    <div class="show-modal" v-if="flase"></div> 
+    <div class="show-modal" v-if="false"></div> 
   </div>
 </template>
 <style lang="scss">
