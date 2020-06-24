@@ -148,7 +148,8 @@ input[type="text"]+label {
 }
 
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+input[type="tel"] {
     @include boxSizing;
     padding: 10px 12px;
     color: #333333;
@@ -324,6 +325,7 @@ select {
 
 input[type="text"]:focus,
 input[type="password"]:focus,
+input[type="tel"]:focus,
 select:focus,
 textarea:focus,
 .select-form:focus {
@@ -535,5 +537,19 @@ input.error {
         word-break: keep-all;
         word-wrap: break-word;
         color: #e53935;
+    }
+}
+
+
+/* full block */
+
+.content {
+    .form-wrap {
+        input[type="text"],
+        input[type="password"],
+        input[type="tel"] {
+            width: 100%;
+            font-size: 14px;
+        }
     }
 }

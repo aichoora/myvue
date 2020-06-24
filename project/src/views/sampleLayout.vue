@@ -97,7 +97,6 @@
                     <input type="text" name="" id="" placeholder="주말 새벽 광어 낚시!!!">
                     <label for="">예약 이름 </label>
                 </div>
-
             </div> 
             2. full-block form(라벨 제목 있음)
             <div class="form-wrap">
@@ -106,7 +105,17 @@
                     <input type="text" name="" id="" placeholder="주말 새벽 광어 낚시!!!">
                 </div>
             </div> 
-
+            2-1. input 타입 
+            1) password
+            <div class="form-wrap">
+                <label for="">비밀번호</label>
+                <input type="password" name="" id="" placeholder="비밀번호를 입력해주세요.">
+            </div>  
+            2) tel
+            <div class="form-wrap">
+                <label for="">전화번호</label>
+                <input type="tel" name="" id="" placeholder="숫자만 입력하세요.">
+            </div> 
             3. 에러 메시지(input에 error 클래스 추가)
             <div class="form-wrap">
                  <!-- 유효성검사 실패시 error 클래스 추가 -->
@@ -217,7 +226,7 @@
                 </div>
                 
             </div>
-            
+        
             6.계좌정보
             <div class="form-wrap">
                 <p class="title">계좌정보 등록 (계좌번호)</p>

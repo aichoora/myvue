@@ -65,7 +65,7 @@
                         
                         <div class="form-wrap">
                             <label for="">전화번호</label>
-                            <input type="text" name="" id="" placeholder="숫자만 입력하세요.">
+                            <input type="tel" name="" id="" placeholder="숫자만 입력하세요.">
                         </div> 
 
                         <!-- 사업자 정보 -->

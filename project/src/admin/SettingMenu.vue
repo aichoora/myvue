@@ -31,6 +31,11 @@
                         <div class="table-wrap">
                             <table class="table-style1 table-hasForm">
                                 <caption>메뉴 설정</caption>
+                                <colgroup>
+                                    <col width="">
+                                    <col width="141px">
+                                    <col width="92px">
+                                </colgroup>
                                 <thead>
                                     <tr>
                                         <th>메뉴</th>
@@ -52,8 +57,8 @@
                                         </td>
                                         <td>
                                             <div class="button-wrap updown-form">
-                                                <button type="button" class="button-up">up</button>
-                                                <button type="button" class="button-down">down</button>
+                                                <button type="button" class="button-up" disabled><span>up</span></button>
+                                                <button type="button" class="button-down"><span>down</span></button>
                                             </div>
                                         </td>
                                     </tr>
@@ -70,8 +75,8 @@
                                         </td>
                                         <td>
                                             <div class="button-wrap updown-form">
-                                                <button type="button" class="button-up">up</button>
-                                                <button type="button" class="button-down">down</button>
+                                                <button type="button" class="button-up"><span>up</span></button>
+                                                <button type="button" class="button-down"><span>down</span></button>
                                             </div>
                                         </td>
                                     </tr>
@@ -88,8 +93,8 @@
                                         </td>
                                         <td>
                                             <div class="button-wrap updown-form">
-                                                <button type="button" class="button-up">up</button>
-                                                <button type="button" class="button-down">down</button>
+                                                <button type="button" class="button-up"><span>up</span></button>
+                                                <button type="button" class="button-down"><span>down</span></button>
                                             </div>
                                         </td>
                                     </tr>
@@ -106,8 +111,8 @@
                                         </td>
                                         <td>
                                             <div class="button-wrap updown-form">
-                                                <button type="button" class="button-up">up</button>
-                                                <button type="button" class="button-down">down</button>
+                                                <button type="button" class="button-up"><span>up</span></button>
+                                                <button type="button" class="button-down"><span>down</span></button>
                                             </div>
                                         </td>
                                     </tr>

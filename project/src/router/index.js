@@ -26,6 +26,8 @@ import SettingScheduleModify from "../admin/SettingScheduleModify.vue"; //예약
 import SettingScheduleModify2 from "../admin/SettingScheduleModify2.vue"; //예약 수정(스케쥴없음)
 import SettingSchduleDelete from "../admin/SettingSchduleDelete.vue"; //예약 삭제
 import SettingSchduleDeleteComplete from "../admin/SettingSchduleDeleteComplete.vue"; //예약 삭제 완료
+import SettingPersonalInfo from "../admin/SettingPersonalInfo.vue"; //개인정보 수정
+import SettingPersonalInfo2 from "../admin/SettingPersonalInfo2.vue"; //개인정보 수정2
 /* SignIn */
 import SignIn from "../admin/SignIn.vue"; //로그인
 import SignUpInfo from "../admin/SignUpInfo.vue"; //파트너정보입력
@@ -137,6 +139,16 @@ const routes = [{
         path: "/settingSchduleDeleteComplete",
         name: "SettingSchduleDeleteComplete",
         components: centerLayout(SettingSchduleDeleteComplete)
+    },
+    {
+        path: "/SettingPersonalInfo",
+        name: "SettingPersonalInfo",
+        components: centerLayout(SettingPersonalInfo)
+    },
+    {
+        path: "/SettingPersonalInfo2",
+        name: "SettingPersonalInfo2",
+        components: centerLayout(SettingPersonalInfo2)
     },
     {
         path: "/signIn",

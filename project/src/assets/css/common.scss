@@ -570,7 +570,8 @@ h1 {
                 font-weight: bold;
             }
             input[type="text"],
-            input[type="password"] {
+            input[type="password"],
+            input[type="tel"] {
                 width: 100%;
                 font-size: 14px;
             }
@@ -1352,6 +1353,14 @@ h1 {
 .table-wrap {
     overflow-x: auto;
     white-space: nowrap;
+    .table-hasForm {
+        td {
+            input[type="text"] {
+                width: 100%;
+                margin-bottom: 0;
+            }
+        }
+    }
 }
 
 .table-wrap.mobile-table {
@@ -1371,7 +1380,7 @@ h1 {
 }
 
 .table-style1 {
-    display: inline-block;
+    // display: block;
     width: 100%;
     text-align: center;
     margin-top: 2px;
@@ -1606,7 +1615,102 @@ table {
         border: 1px solid #a6b2c6;
         font-size: 0;
     }
+    button:disabled {
+        span {
+            background-color: #a6b2c6;
+        }
+    }
+    button.button-up {
+        position: relative;
+    }
+    button span {
+        display: block;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        width: 10px;
+        height: 6px;
+        background: #384d6e;
+        font-size: 0;
+        transform: translate(-50%, 0);
+    }
+    .button-up span {
+        height: 7px
+    }
+    .button-up:before {
+        display: block;
+        content: '';
+        position: absolute;
+        top: 6px;
+        left: 10px;
+        width: 10px;
+        height: 6px;
+        background: #fff;
+        z-index: 10;
+        transform: rotate(-45deg);
+    }
+    .button-up:after {
+        display: block;
+        content: '';
+        position: absolute;
+        top: 6px;
+        left: 18px;
+        width: 10px;
+        height: 6px;
+        background: #fff;
+        z-index: 10;
+        transform: rotate(45deg);
+    }
     button.button-down {
+        position: relative;
         border-left: 0;
+    }
+    .button-down:before {
+        display: block;
+        content: '';
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 10px;
+        height: 6px;
+        background: #fff;
+        z-index: 10;
+        transform: rotate(45deg);
+    }
+    .button-down:after {
+        display: block;
+        content: '';
+        position: absolute;
+        top: 9px;
+        left: 19px;
+        width: 10px;
+        height: 6px;
+        background: #fff;
+        z-index: 10;
+        transform: rotate(-45deg);
+    }
+}
+
+
+/* 개인정보 수정 */
+
+.personalInfo-wrap {
+    padding-top: 40px;
+    padding-bottom: 80px;
+    .form-wrap {
+        .date-list {
+            p {
+                margin-bottom: 2px;
+                font-size: 12px;
+                color: #333;
+                font-weight: bold;
+            }
+        }
+        label {
+            margin-bottom: 2px;
+            font-size: 12px;
+            color: #333;
+            font-weight: bold;
+        }
     }
 }
